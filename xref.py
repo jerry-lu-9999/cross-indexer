@@ -21,12 +21,21 @@ for line in fc.readlines():
     code_dict[count] = line
     count += 1
 fc.close()
-for x, y in code_dict.items():
-    print(x, y)
+#for x, y in code_dict.items():
+#    print(x, y)
+
 ### READ FROM LLVM OUTPUT FILE ###
 line_number = 0
+cur_line = 0
+start = False
+start_address = ""
 line_dict = {}
 pattern = re.compile(r"(0x0{12})([a-z0-9]{4})")
+
+# dictionary of address and its corresponding line in the code block, based on the LLVM table
+# if the line in the table is 0, match it to the line in the prevous row (prev_line)
+address_line = {}
+prev_line = 1
 with open('output.txt', 'r') as llvm:
     for line in llvm:
         line_number += 1
@@ -38,30 +47,44 @@ with open('output.txt', 'r') as llvm:
         if line.strip() == '':
             break
         m = pattern.match(line)
-        # if matched, we take out the actually address part
+        # if matched, we take out the actual address part
         if m:
             memory_addr = m.group(2)
-            #print(memory_addr)
+            if not start:
+                start_address = memory_addr
+                start = True
             tup = tuple(part for part in re.split(r"\s+", line) if part)
-            if tup[1] not in line_dict:
-                line_dict.update({tup[1]:[memory_addr]})
-            else:
-                line_dict[tup[1]].append(memory_addr)
-            #print(tup)
+            
+            if tup[1] == '0':
+                address_line[memory_addr] = prev_line
+            else: 
+                address_line[memory_addr] = int(tup[1])
+                prev_line = int(tup[1])
+
+end_address = list(address_line.keys())[-1]
+start_int = int("0x"+start_address, 16)
+end_int = int("0x"+end_address, 16)
 llvm.close()
-#for x, y in line_dict.items():
-#   print(x, y)
+# for x, y in address_line.items():
+#     print(x, y)
 
 ### READ FROM OBJDUMP FILE ###
 """""
 from the objdump.txt file, extract:
 - assembly_dict =  {<address>: (<address>, <bytes>, <instruction>)}
 - ref_dict = {<address>: <address>}
+- code_block = list of tuples (<index>, <line number>, [list of corresponding assembly addresses])
 """""
 assembly_dict = {}
 ref_dict = {}
+code_block = {1: (0, [])}
+index = 1
 fr = open('objdump.txt', 'r')
 obj_pattern = re.compile(r"[\s]{4}[a-z0-9]{4}.*")
+
+# since the addresses presented on the HTML file should only be in the range of start and end addresses
+# only starts reading when cur address >= start_address and stops when cur address > end_address
+start_code = False
 for line in fr.readlines():
     m = obj_pattern.match(line)
     if m:
@@ -70,14 +93,38 @@ for line in fr.readlines():
         assembly_dict[address] = tup
         if len(tup) > 2: 
             instruction = tup[2].split(" ")
-            if instruction[0].startswith("j") | (instruction[0].startswith("callq")):
+            if instruction[0].startswith("j") or (instruction[0].startswith("callq")):
                 match = re.match(r'[a-z0-9]{4}', instruction[1])
                 if match:
                     adref = instruction[1][0:4]
                     ref_dict[address] = adref
+        # add address to code_block
+        # if address has a corresponding line in the table (based on address_line)
+        ad_str = "0x" + address
+        ad_int = int(ad_str, 16)
+        if ad_int >= start_int: 
+            start_code = True
+        if ad_int > end_int:
+            break
+        if start_code: 
+            if address in address_line.keys():
+                # get the line corresponding to that address
+                cur_line = address_line[address]
+                # if this line is equal to the line in the current block, add it in the list
+                # {1: (3, [7200])} => {1: (3, [7200, 7204])}
+                if cur_line == code_block[index][0]: 
+                    code_block[index][1].append(address)
+                # else, start a new block
+                else: 
+                    index += 1
+                    code_block[index] = (int(address_line[address]), [address])
+            # if address doesn't has a corresponding line in the table, put it in the current block
+            else:
+                code_block[index][1].append(address)
+    
 fr.close()
-#for x, y in assembly_dict.items():
-#    print(x, y)
+for x, y in code_block.items():
+   print(x, y)
 
 ### WRITE TO HTML ###
 fw = open("cross-indexer.html", "w+")
