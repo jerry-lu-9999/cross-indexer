@@ -13,6 +13,16 @@ f = open('output.txt', 'w')
 call(["llvm-dwarfdump", "-o", "output.txt", "--debug-line", "example"], stdout=f)
 f.close()
 
+### READ FROM RUST FILE ###
+code_dict = {}
+fc = open('example.rs', 'r')
+count = 1
+for line in fc.readlines():
+    code_dict[count] = line
+    count += 1
+fc.close()
+for x, y in code_dict.items():
+    print(x, y)
 ### READ FROM LLVM OUTPUT FILE ###
 line_number = 0
 line_dict = {}
@@ -38,6 +48,7 @@ with open('output.txt', 'r') as llvm:
             else:
                 line_dict[tup[1]].append(memory_addr)
             #print(tup)
+llvm.close()
 #for x, y in line_dict.items():
 #   print(x, y)
 
@@ -64,6 +75,46 @@ for line in fr.readlines():
                 if match:
                     adref = instruction[1][0:4]
                     ref_dict[address] = adref
-
+fr.close()
 #for x, y in assembly_dict.items():
 #    print(x, y)
+
+### WRITE TO HTML ###
+fw = open("cross-indexer.html", "w+")
+fw.write("""
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>xref</title>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+        <style>
+            .code-block
+            {
+                display: table;
+                box-sizing: border-box;
+                position: relative;
+                table-layout: fixed;
+                width: 100%;
+            }
+            pre
+            {
+                margin: 0;
+                overflow: auto;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+            .asm-block,
+            .src-block
+            {
+                width: 50%;
+                display: table-cell;
+                vertical-align: top;
+            }
+            li.L0, li.L1, li.L2, li.L3,
+            li.L5, li.L6, li.L7, li.L8
+            {
+                list-style-type: decimal !important;
+            }
+        </style>
+    </head>
+""")
