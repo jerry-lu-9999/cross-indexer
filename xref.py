@@ -29,21 +29,24 @@ fc.close()
 #    print(x, y)
 
 ### READ FROM LLVM OUTPUT FILE ###
+"""
+from output.txt file (file that contains llvm drawfdrump output), extracts from 
+the relevant table 2 dictionaries: 
+address_line = {<address> : <line>} - dictionary of address and the corresponding line in the source code
+line_dict = {<line> : <address>} - dictionary of a line and the first address in the assembly code that executes that line
+"""
 line_number = 0
 cur_line = 0
 start = False
 start_address = ""
 line_dict = {}
 pattern = re.compile(r"(0x0{12})([a-z0-9]{4})")
-
-# dictionary of address and its corresponding line in the code block, based on the LLVM table
-# if the line in the table is 0, match it to the line in the prevous row (prev_line)
 address_line = {}
 prev_line = 1
 with open('output.txt', 'r') as llvm:
     for line in llvm:
         line_number += 1
-        if "example.rs" in line:
+        if file_name in line:
             break
     for i in range(line_number, line_number + 6):
         llvm.readline()
@@ -57,13 +60,18 @@ with open('output.txt', 'r') as llvm:
             if not start:
                 start_address = memory_addr
                 start = True
+            # split the line by whitespaces
             tup = tuple(part for part in re.split(r"\s+", line) if part)
-            
+            # if the line in the table is 0, match it to the line in the prevous row (prev_line)
             if tup[1] == '0':
                 address_line[memory_addr] = prev_line
+            # if not, then the value of this current memory address in the dict is the line value in the table
             else: 
                 address_line[memory_addr] = int(tup[1])
                 prev_line = int(tup[1])
+                # put the address value in line_dict if this is the first time the line is executed in the assembly code
+                if int(tup[1]) not in line_dict.keys():
+                    line_dict[int(tup[1])] = memory_addr
 
 end_address = list(address_line.keys())[-1]
 start_int = int("0x"+start_address, 16)
@@ -77,12 +85,12 @@ llvm.close()
 from the objdump.txt file, extract:
 - assembly_dict =  {<address>: (<address>, <bytes>, <instruction>)}
 - ref_dict = {<address>: <address>}
-- code_block = list of tuples {<index>, (<line number>, [list of corresponding assembly addresses])}
+- code_block = list of tuples {<index>, (<line number>, [list of corresponding assembly addresses], not-grayed)}
 """""
 addr_to_line_dict = {}
 assembly_dict = {}
 ref_dict = {}
-code_block = {1: (0, [])}
+code_block = {1: (0, [], False)}
 index = 1
 fr = open('objdump.txt', 'r')
 obj_pattern = re.compile(r"[\s]{4}[a-z0-9]{4}.*")
@@ -124,15 +132,17 @@ for line in fr.readlines():
                 # else, start a new block
                 else: 
                     index += 1
-                    code_block[index] = (int(address_line[address]), [address])
+                    # if this is the code block when the line is executed in the fist time  
+                    # ({line: address} value appears in line_dict), set the 3rd tuple of the block to be True  
+                    code_block[index] = (int(address_line[address]), [address], False)
+                    if line_dict[code_block[index][0]] == address: 
+                        code_block[index] = (int(address_line[address]), [address], True)    
             # if address doesn't has a corresponding line in the table, put it in the current block
             else:
                 code_block[index][1].append(address)
     
 fr.close()
 
-# for x, y in ref_dict.items():
-#    print(x, y)
 
 ### WRITE TO HTML ###
 html = open("cross-indexer.html", "w+")
@@ -157,6 +167,9 @@ html.write("""
                 border: 2px solid black;
                 border-radius: 5px;
             }
+            .grayed{
+                background-color: #cccccc;
+            }
             pre
             {
                 margin: 0;
@@ -167,13 +180,17 @@ html.write("""
             .bgColor{
                 background-color: cyan;
             }
-            .asm-block,
-            .src-block
-            {
-                width: 50%;
-                display: table-cell;
-                vertical-align: top;
-                padding-top: -5px;
+            .asm-block {
+                    font-size: 10pt;
+                    font-family: 'Courier New', Courier, monospace;
+            }
+            .src-block {
+                    width: 50%;
+                    display: table-cell;
+                    vertical-align: top;
+                    padding-top: -5px;
+                    font-size: 10pt;
+                    font-family: 'Courier New', Courier, monospace;
             }
             li.L0, li.L1, li.L2, li.L3,
             li.L5, li.L6, li.L7, li.L8
@@ -190,16 +207,12 @@ for key in code_block.keys():
     tuple = code_block[key]
     line_num = tuple[0]
     addr_list = tuple[1]
+    not_grayed = tuple[2]
     if line_num == 0:
         continue
     
     html.write("""
         <div class="code-block">
-    """)
-    html.write("""
-        <div class="src-block">""")
-    html.write("<p>" + str(key) + "." + rust_code[line_num] + "</p>\n")
-    html.write("""</div>
     """)
 
     html.write("""
@@ -221,7 +234,15 @@ for key in code_block.keys():
             
 
     html.write("</div>")
+    html.write("""
+        <div class="src-block">""")
     
+    html.write("<p")
+    if not not_grayed:
+        html.write(""" class="grayed" """)
+    html.write(">" + str(key) + "." + rust_code[line_num] + "</p>\n")
+    html.write("""</div>""")
+
     html.write("</div>\n")
 
 html.write("</body>")

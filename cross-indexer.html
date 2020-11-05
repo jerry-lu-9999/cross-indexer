@@ -19,6 +19,9 @@
                 border: 2px solid black;
                 border-radius: 5px;
             }
+            .grayed{
+                background-color: #808080;
+            }
             pre
             {
                 margin: 0;
@@ -29,12 +32,17 @@
             .bgColor{
                 background-color: cyan;
             }
-            .asm-block,
-            .src-block
-            {
-                width: 50%;
-                display: table-cell;
-                vertical-align: top;
+            .asm-block {
+                    font-size: 90%;
+                    font-family: 'Courier New', Courier, monospace;
+            }
+            .src-block {
+                    width: 50%;
+                    display: table-cell;
+                    vertical-align: top;
+                    padding-top: -5px;
+                    font-size: 90%;
+                    font-family: 'Courier New', Courier, monospace;
             }
             li.L0, li.L1, li.L2, li.L3,
             li.L5, li.L6, li.L7, li.L8
@@ -48,22 +56,17 @@
 
         <div class="code-block">
     
-        <div class="src-block"><p>2.fn fib(n: i32) -> i32 {
-</p>
-</div>
-    
         <div class="asm-block">
     <pre><a name="7200" href="#7200">7200</a>:	48 83 ec 28          	sub    $0x28,%rsp
 </pre>
 <pre class="bgColor"><a name="7204" href="#7204">7204</a>:	89 7c 24 24          	mov    %edi,0x24(%rsp)
 </pre>
+</div>
+        <div class="src-block"><p>2.fn fib(n: i32) -> i32 {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>3.    if n < 2 {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7208" href="#7208">7208</a>:	83 ff 02             	cmp    $0x2,%edi
@@ -74,13 +77,12 @@
 REF TO <a href="#7226">7226</a></pre>
 <pre class="bgColor"><a name="7211" href="#7211">7211</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
 </pre>
+</div>
+        <div class="src-block"><p>3.    if n < 2 {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>4.        fib(n - 2) + fib (n - 1)
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7215" href="#7215">7215</a>:	83 e8 02             	sub    $0x2,%eax
@@ -97,37 +99,34 @@ REF TO <a href="#7283">7283</a></pre>
 REF TO <a href="#7230">7230</a></pre>
 <pre><a name="7226" href="#7226">7226</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
 </pre>
+</div>
+        <div class="src-block"><p>4.        fib(n - 2) + fib (n - 1)
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>5.        n
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="722a" href="#722a">722a</a>:	89 44 24 20          	mov    %eax,0x20(%rsp)
 </pre>
+</div>
+        <div class="src-block"><p>5.        n
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>6.    if n < 2 {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="722e" href="#722e">722e</a>:	eb 4a                	jmp    727a <_ZN7example3fib17h40989845736500feE+0x7a>
 REF TO <a href="#727a">727a</a></pre>
 <pre class="bgColor"><a name="7230" href="#7230">7230</a>:	8b 7c 24 18          	mov    0x18(%rsp),%edi
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >6.    if n < 2 {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>7.        fib(n - 2) + fib (n - 1)
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7234" href="#7234">7234</a>:	e8 c7 ff ff ff       	callq  7200 <_ZN7example3fib17h40989845736500feE>
@@ -170,13 +169,12 @@ REF TO <a href="#72bf">72bf</a></pre>
 </pre>
 <pre class="bgColor"><a name="7276" href="#7276">7276</a>:	89 44 24 20          	mov    %eax,0x20(%rsp)
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >7.        fib(n - 2) + fib (n - 1)
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>8.}
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="727a" href="#727a">727a</a>:	8b 44 24 20          	mov    0x20(%rsp),%eax
@@ -185,13 +183,12 @@ REF TO <a href="#72bf">72bf</a></pre>
 </pre>
 <pre><a name="7282" href="#7282">7282</a>:	c3                   	retq   
 </pre>
+</div>
+        <div class="src-block"><p>8.}
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>9.        fib(n - 2) + fib (n - 1)
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7283" href="#7283">7283</a>:	48 8d 3d 16 1e 03 00 	lea    0x31e16(%rip),%rdi        # 390a0 <str.0>
@@ -232,24 +229,22 @@ REF TO <a href="#72bf">72bf</a></pre>
 </pre>
 <pre><a name="72dd" href="#72dd">72dd</a>:	0f 1f 00             	nopl   (%rax)
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >9.        fib(n - 2) + fib (n - 1)
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>10.fn main() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="72e0" href="#72e0">72e0</a>:	48 81 ec a8 01 00 00 	sub    $0x1a8,%rsp
 </pre>
+</div>
+        <div class="src-block"><p>10.fn main() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>11.    for argument in env::args() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="72e7" href="#72e7">72e7</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
@@ -262,13 +257,12 @@ REF TO <a href="#72bf">72bf</a></pre>
 </pre>
 <pre><a name="72fa" href="#72fa">72fa</a>:	eb 0f                	jmp    730b <_ZN7example4main17h7d7eff44e45827fdE+0x2b>
 REF TO <a href="#730b">730b</a></pre>
+</div>
+        <div class="src-block"><p>11.    for argument in env::args() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>12.fn main() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="72fc" href="#72fc">72fc</a>:	48 8b bc 24 80 01 00 	mov    0x180(%rsp),%rdi
@@ -279,13 +273,12 @@ REF TO <a href="#730b">730b</a></pre>
 REF TO <a href="#6080">6080</a></pre>
 <pre class="bgColor"><a name="7309" href="#7309">7309</a>:	0f 0b                	ud2    
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >12.fn main() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>13.    for argument in env::args() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="730b" href="#730b">730b</a>:	48 8d 7c 24 40       	lea    0x40(%rsp),%rdi
@@ -332,13 +325,12 @@ REF TO <a href="#7be0">7be0</a></pre>
 </pre>
 <pre class="bgColor"><a name="7367" href="#7367">7367</a>:	eb 0f                	jmp    7378 <_ZN7example4main17h7d7eff44e45827fdE+0x98>
 REF TO <a href="#7378">7378</a></pre>
+</div>
+        <div class="src-block"><p class="grayed" >13.    for argument in env::args() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>14.    }
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7369" href="#7369">7369</a>:	48 8d bc 24 80 00 00 	lea    0x80(%rsp),%rdi
@@ -349,13 +341,12 @@ REF TO <a href="#7378">7378</a></pre>
 REF TO <a href="#6c50">6c50</a></pre>
 <pre class="bgColor"><a name="7376" href="#7376">7376</a>:	eb 84                	jmp    72fc <_ZN7example4main17h7d7eff44e45827fdE+0x1c>
 REF TO <a href="#72fc">72fc</a></pre>
+</div>
+        <div class="src-block"><p>14.    }
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>15.    for argument in env::args() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7378" href="#7378">7378</a>:	48 8b 84 24 b8 00 00 	mov    0xb8(%rsp),%rax
@@ -376,13 +367,12 @@ REF TO <a href="#7391">7391</a></pre>
 REF TO <a href="#738f">738f</a></pre>
 <pre><a name="738f" href="#738f">738f</a>:	eb 1c                	jmp    73ad <_ZN7example4main17h7d7eff44e45827fdE+0xcd>
 REF TO <a href="#73ad">73ad</a></pre>
+</div>
+        <div class="src-block"><p class="grayed" >15.    for argument in env::args() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>16.    }
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7391" href="#7391">7391</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
@@ -397,13 +387,12 @@ REF TO <a href="#73ad">73ad</a></pre>
 REF TO <a href="#6c50">6c50</a></pre>
 <pre class="bgColor"><a name="73a6" href="#73a6">73a6</a>:	e9 05 02 00 00       	jmpq   75b0 <_ZN7example4main17h7d7eff44e45827fdE+0x2d0>
 REF TO <a href="#75b0">75b0</a></pre>
+</div>
+        <div class="src-block"><p class="grayed" >16.    }
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>17.    for argument in env::args() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="73ab" href="#73ab">73ab</a>:	0f 0b                	ud2    
@@ -484,13 +473,12 @@ REF TO <a href="#75b0">75b0</a></pre>
 </pre>
 <pre><a name="7444" href="#7444">7444</a>:	00 
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >17.    for argument in env::args() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>18.        let number: i32 = match argument.parse() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7445" href="#7445">7445</a>:	e8 96 fb ff ff       	callq  6fe0 <_ZN65_$LT$alloc..string..String$u20$as$u20$core..ops..deref..Deref$GT$5deref17hb212b24021add72bE>
@@ -511,13 +499,12 @@ REF TO <a href="#71c0">71c0</a></pre>
 </pre>
 <pre><a name="746a" href="#746a">746a</a>:	eb 12                	jmp    747e <_ZN7example4main17h7d7eff44e45827fdE+0x19e>
 REF TO <a href="#747e">747e</a></pre>
+</div>
+        <div class="src-block"><p>18.        let number: i32 = match argument.parse() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>19.    }
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="746c" href="#746c">746c</a>:	48 8d bc 24 10 01 00 	lea    0x110(%rsp),%rdi
@@ -530,13 +517,12 @@ REF TO <a href="#6d30">6d30</a></pre>
 REF TO <a href="#75d2">75d2</a></pre>
 <pre><a name="747e" href="#747e">747e</a>:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >19.    }
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>20.        let number: i32 = match argument.parse() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="7483" href="#7483">7483</a>:	48 89 84 24 90 01 00 	mov    %rax,0x190(%rsp)
@@ -551,13 +537,12 @@ REF TO <a href="#75d2">75d2</a></pre>
 </pre>
 <pre class="bgColor"><a name="749a" href="#749a">749a</a>:	00 
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >20.        let number: i32 = match argument.parse() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>21.            Ok(n) => n,
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="749b" href="#749b">749b</a>:	0f b6 94 24 28 01 00 	movzbl 0x128(%rsp),%edx
@@ -574,24 +559,22 @@ REF TO <a href="#74b0">74b0</a></pre>
 REF TO <a href="#74ac">74ac</a></pre>
 <pre><a name="74ac" href="#74ac">74ac</a>:	eb 30                	jmp    74de <_ZN7example4main17h7d7eff44e45827fdE+0x1fe>
 REF TO <a href="#74de">74de</a></pre>
+</div>
+        <div class="src-block"><p>21.            Ok(n) => n,
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>22.        let number: i32 = match argument.parse() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="74ae" href="#74ae">74ae</a>:	0f 0b                	ud2    
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >22.        let number: i32 = match argument.parse() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>23.            Ok(n) => n,
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="74b0" href="#74b0">74b0</a>:	8b 84 24 2c 01 00 00 	mov    0x12c(%rsp),%eax
@@ -600,13 +583,12 @@ REF TO <a href="#74de">74de</a></pre>
 </pre>
 <pre><a name="74be" href="#74be">74be</a>:	89 84 24 9c 01 00 00 	mov    %eax,0x19c(%rsp)
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >23.            Ok(n) => n,
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>24.        println!("{}", fib(number));
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="74c5" href="#74c5">74c5</a>:	48 8b 35 dc ff 03 00 	mov    0x3ffdc(%rip),%rsi        # 474a8 <__dso_handle+0xf0>
@@ -625,13 +607,12 @@ REF TO <a href="#74fa">74fa</a></pre>
 </pre>
 <pre class="bgColor"><a name="74e5" href="#74e5">74e5</a>:	00 
 </pre>
+</div>
+        <div class="src-block"><p>24.        println!("{}", fib(number));
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>25.    }
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="74e6" href="#74e6">74e6</a>:	e8 45 f8 ff ff       	callq  6d30 <_ZN4core3ptr13drop_in_place17h9d6738490598f97fE>
@@ -642,26 +623,24 @@ REF TO <a href="#74ed">74ed</a></pre>
 </pre>
 <pre class="bgColor"><a name="74f4" href="#74f4">74f4</a>:	00 
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >25.    }
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>26.            Err(_) => continue,
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="74f5" href="#74f5">74f5</a>:	e9 54 fe ff ff       	jmpq   734e <_ZN7example4main17h7d7eff44e45827fdE+0x6e>
 REF TO <a href="#734e">734e</a></pre>
 <pre class="bgColor"><a name="74fa" href="#74fa">74fa</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
 </pre>
+</div>
+        <div class="src-block"><p>26.            Err(_) => continue,
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>27.        println!("{}", fib(number));
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="74fe" href="#74fe">74fe</a>:	89 84 24 78 01 00 00 	mov    %eax,0x178(%rsp)
@@ -738,13 +717,12 @@ REF TO <a href="#7594">7594</a></pre>
 </pre>
 <pre><a name="759b" href="#759b">759b</a>:	00 
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >27.        println!("{}", fib(number));
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>28.    }
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="759c" href="#759c">759c</a>:	e8 8f f7 ff ff       	callq  6d30 <_ZN4core3ptr13drop_in_place17h9d6738490598f97fE>
@@ -755,36 +733,33 @@ REF TO <a href="#75a3">75a3</a></pre>
 </pre>
 <pre class="bgColor"><a name="75aa" href="#75aa">75aa</a>:	00 
 </pre>
+</div>
+        <div class="src-block"><p class="grayed" >28.    }
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>29.    for argument in env::args() {
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="75ab" href="#75ab">75ab</a>:	e9 9e fd ff ff       	jmpq   734e <_ZN7example4main17h7d7eff44e45827fdE+0x6e>
 REF TO <a href="#734e">734e</a></pre>
+</div>
+        <div class="src-block"><p class="grayed" >29.    for argument in env::args() {
+</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>30.}</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="75b0" href="#75b0">75b0</a>:	48 81 c4 a8 01 00 00 	add    $0x1a8,%rsp
 </pre>
 <pre class="bgColor"><a name="75b7" href="#75b7">75b7</a>:	c3                   	retq   
 </pre>
+</div>
+        <div class="src-block"><p>30.}</p>
 </div></div>
 
         <div class="code-block">
-    
-        <div class="src-block"><p>31.    }
-</p>
-</div>
     
         <div class="asm-block">
     <pre><a name="75b8" href="#75b8">75b8</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
@@ -824,5 +799,8 @@ REF TO <a href="#75d2">75d2</a></pre>
 <pre class="bgColor"><a name="7601" href="#7601">7601</a>:	e9 66 fe ff ff       	jmpq   746c <_ZN7example4main17h7d7eff44e45827fdE+0x18c>
 REF TO <a href="#746c">746c</a></pre>
 <pre><a name="7606" href="#7606">7606</a>:	66 2e 0f 1f 84 00 00 	nopw   %cs</pre>
+</div>
+        <div class="src-block"><p class="grayed" >31.    }
+</p>
 </div></div>
 </body></html>

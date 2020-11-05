@@ -1,4 +1,4 @@
-example2:	file format ELF64-x86-64
+ex2:	file format ELF64-x86-64
 
 .debug_line contents:
 debug_line[0x00000000]
