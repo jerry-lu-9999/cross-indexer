@@ -14,14 +14,14 @@ call(["llvm-dwarfdump", "-o", "output.txt", "--debug-line", "example"], stdout=f
 f.close()
 
 ### READ FROM RUST FILE ###
-code_dict = {}
+rust_code = {}
 fc = open('example.rs', 'r')
 count = 1
 for line in fc.readlines():
-    code_dict[count] = line
+    rust_code[count] = line
     count += 1
 fc.close()
-#for x, y in code_dict.items():
+#for x, y in rust_code.items():
 #    print(x, y)
 
 ### READ FROM LLVM OUTPUT FILE ###
@@ -73,8 +73,9 @@ llvm.close()
 from the objdump.txt file, extract:
 - assembly_dict =  {<address>: (<address>, <bytes>, <instruction>)}
 - ref_dict = {<address>: <address>}
-- code_block = list of tuples (<index>, <line number>, [list of corresponding assembly addresses])
+- code_block = list of tuples {<index>, (<line number>, [list of corresponding assembly addresses])}
 """""
+addr_to_line_dict = {}
 assembly_dict = {}
 ref_dict = {}
 code_block = {1: (0, [])}
@@ -89,8 +90,10 @@ for line in fr.readlines():
     m = obj_pattern.match(line)
     if m:
         address = m.group()[4:8]
-        tup = tuple(re.sub(r"\:|\s+", " ", part) for part in m.group().split('\t') if part) 
+        tup = tuple(part for part in m.group().split('\t') if part) 
         assembly_dict[address] = tup
+        addr_to_line_dict[address] = line.split(":")[1]
+
         if len(tup) > 2: 
             instruction = tup[2].split(" ")
             if instruction[0].startswith("j") or (instruction[0].startswith("callq")):
@@ -123,18 +126,23 @@ for line in fr.readlines():
                 code_block[index][1].append(address)
     
 fr.close()
-for x, y in code_block.items():
+
+for x, y in ref_dict.items():
    print(x, y)
 
 ### WRITE TO HTML ###
-fw = open("cross-indexer.html", "w+")
-fw.write("""
+html = open("cross-indexer.html", "w+")
+html.write("""
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>xref</title>
         <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
         <style>
+            a{
+
+            }
             .code-block
             {
                 display: table;
@@ -142,6 +150,8 @@ fw.write("""
                 position: relative;
                 table-layout: fixed;
                 width: 100%;
+                border: 2px solid black;
+                border-radius: 5px;
             }
             pre
             {
@@ -164,4 +174,41 @@ fw.write("""
             }
         </style>
     </head>
+    <h1>XREF</h1>
+    <body>
 """)
+
+for key in code_block.keys():
+    tuple = code_block[key]
+    line_num = tuple[0]
+    addr_list = tuple[1]
+    if line_num == 0:
+        continue
+    
+    html.write("""
+        <div class="code-block">
+    """)
+    html.write("""
+        <div class="src-block">""")
+    html.write("<p>" + str(key) + "." + rust_code[line_num] + "</p>\n")
+    html.write("""</div>
+    """)
+
+    html.write("""
+        <div class="asm-block">
+    """)
+    for addr in addr_list:
+        html.write("<pre>" + '<a name="'+addr+'" href="#'+addr+'">'+addr+ "</a>"+ ":" + addr_to_line_dict[addr])
+        if addr in ref_dict.keys():
+            jump_addr = ref_dict[addr]
+            html.write('<a href="#'+jump_addr+'">'+jump_addr+"</a>"+"</pre>\n")
+        else:
+            html.write("</pre>\n")
+            
+
+    html.write("</div>")
+    
+    html.write("</div>\n")
+
+html.write("</body>")
+html.write("</html>")

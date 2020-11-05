@@ -1,10 +1,14 @@
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>xref</title>
         <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
         <style>
+            a{
+
+            }
             .code-block
             {
                 display: table;
@@ -12,6 +16,8 @@
                 position: relative;
                 table-layout: fixed;
                 width: 100%;
+                border: 2px solid black;
+                border-radius: 5px;
             }
             pre
             {
@@ -34,3 +40,786 @@
             }
         </style>
     </head>
+    <h1>XREF</h1>
+    <body>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>2.fn fib(n: i32) -> i32 {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7200" href="#7200">7200</a>:	48 83 ec 28          	sub    $0x28,%rsp
+</pre>
+<pre><a name="7204" href="#7204">7204</a>:	89 7c 24 24          	mov    %edi,0x24(%rsp)
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>3.    if n < 2 {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7208" href="#7208">7208</a>:	83 ff 02             	cmp    $0x2,%edi
+</pre>
+<pre><a name="720b" href="#720b">720b</a>:	89 7c 24 1c          	mov    %edi,0x1c(%rsp)
+</pre>
+<pre><a name="720f" href="#720f">720f</a>:	7c 15                	jl     7226 <_ZN7example3fib17h40989845736500feE+0x26>
+</pre>
+<pre><a name="7211" href="#7211">7211</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>4.        fib(n - 2) + fib (n - 1)
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7215" href="#7215">7215</a>:	83 e8 02             	sub    $0x2,%eax
+</pre>
+<pre><a name="7218" href="#7218">7218</a>:	0f 90 c1             	seto   %cl
+</pre>
+<pre><a name="721b" href="#721b">721b</a>:	f6 c1 01             	test   $0x1,%cl
+</pre>
+<pre><a name="721e" href="#721e">721e</a>:	89 44 24 18          	mov    %eax,0x18(%rsp)
+</pre>
+<pre><a name="7222" href="#7222">7222</a>:	75 5f                	jne    7283 <_ZN7example3fib17h40989845736500feE+0x83>
+</pre>
+<pre><a name="7224" href="#7224">7224</a>:	eb 0a                	jmp    7230 <_ZN7example3fib17h40989845736500feE+0x30>
+</pre>
+<pre><a name="7226" href="#7226">7226</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>5.        n
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="722a" href="#722a">722a</a>:	89 44 24 20          	mov    %eax,0x20(%rsp)
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>6.    if n < 2 {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="722e" href="#722e">722e</a>:	eb 4a                	jmp    727a <_ZN7example3fib17h40989845736500feE+0x7a>
+</pre>
+<pre><a name="7230" href="#7230">7230</a>:	8b 7c 24 18          	mov    0x18(%rsp),%edi
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>7.        fib(n - 2) + fib (n - 1)
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7234" href="#7234">7234</a>:	e8 c7 ff ff ff       	callq  7200 <_ZN7example3fib17h40989845736500feE>
+</pre>
+<pre><a name="7239" href="#7239">7239</a>:	89 44 24 14          	mov    %eax,0x14(%rsp)
+</pre>
+<pre><a name="723d" href="#723d">723d</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
+</pre>
+<pre><a name="7241" href="#7241">7241</a>:	ff c8                	dec    %eax
+</pre>
+<pre><a name="7243" href="#7243">7243</a>:	0f 90 c1             	seto   %cl
+</pre>
+<pre><a name="7246" href="#7246">7246</a>:	f6 c1 01             	test   $0x1,%cl
+</pre>
+<pre><a name="7249" href="#7249">7249</a>:	89 44 24 10          	mov    %eax,0x10(%rsp)
+</pre>
+<pre><a name="724d" href="#724d">724d</a>:	75 52                	jne    72a1 <_ZN7example3fib17h40989845736500feE+0xa1>
+</pre>
+<pre><a name="724f" href="#724f">724f</a>:	8b 7c 24 10          	mov    0x10(%rsp),%edi
+</pre>
+<pre><a name="7253" href="#7253">7253</a>:	e8 a8 ff ff ff       	callq  7200 <_ZN7example3fib17h40989845736500feE>
+</pre>
+<pre><a name="7258" href="#7258">7258</a>:	89 44 24 0c          	mov    %eax,0xc(%rsp)
+</pre>
+<pre><a name="725c" href="#725c">725c</a>:	8b 44 24 14          	mov    0x14(%rsp),%eax
+</pre>
+<pre><a name="7260" href="#7260">7260</a>:	8b 4c 24 0c          	mov    0xc(%rsp),%ecx
+</pre>
+<pre><a name="7264" href="#7264">7264</a>:	01 c8                	add    %ecx,%eax
+</pre>
+<pre><a name="7266" href="#7266">7266</a>:	0f 90 c2             	seto   %dl
+</pre>
+<pre><a name="7269" href="#7269">7269</a>:	f6 c2 01             	test   $0x1,%dl
+</pre>
+<pre><a name="726c" href="#726c">726c</a>:	89 44 24 08          	mov    %eax,0x8(%rsp)
+</pre>
+<pre><a name="7270" href="#7270">7270</a>:	75 4d                	jne    72bf <_ZN7example3fib17h40989845736500feE+0xbf>
+</pre>
+<pre><a name="7272" href="#7272">7272</a>:	8b 44 24 08          	mov    0x8(%rsp),%eax
+</pre>
+<pre><a name="7276" href="#7276">7276</a>:	89 44 24 20          	mov    %eax,0x20(%rsp)
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>8.}
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="727a" href="#727a">727a</a>:	8b 44 24 20          	mov    0x20(%rsp),%eax
+</pre>
+<pre><a name="727e" href="#727e">727e</a>:	48 83 c4 28          	add    $0x28,%rsp
+</pre>
+<pre><a name="7282" href="#7282">7282</a>:	c3                   	retq   
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>9.        fib(n - 2) + fib (n - 1)
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7283" href="#7283">7283</a>:	48 8d 3d 16 1e 03 00 	lea    0x31e16(%rip),%rdi        # 390a0 <str.0>
+</pre>
+<pre><a name="728a" href="#728a">728a</a>:	48 8d 15 af 01 04 00 	lea    0x401af(%rip),%rdx        # 47440 <__dso_handle+0x88>
+</pre>
+<pre><a name="7291" href="#7291">7291</a>:	48 8d 05 78 c0 02 00 	lea    0x2c078(%rip),%rax        # 33310 <_ZN4core9panicking5panic17h49577d7675e529f3E>
+</pre>
+<pre><a name="7298" href="#7298">7298</a>:	be 21 00 00 00       	mov    $0x21,%esi
+</pre>
+<pre><a name="729d" href="#729d">729d</a>:	ff d0                	callq  *%rax
+</pre>
+<pre><a name="729f" href="#729f">729f</a>:	0f 0b                	ud2    
+</pre>
+<pre><a name="72a1" href="#72a1">72a1</a>:	48 8d 3d f8 1d 03 00 	lea    0x31df8(%rip),%rdi        # 390a0 <str.0>
+</pre>
+<pre><a name="72a8" href="#72a8">72a8</a>:	48 8d 15 a9 01 04 00 	lea    0x401a9(%rip),%rdx        # 47458 <__dso_handle+0xa0>
+</pre>
+<pre><a name="72af" href="#72af">72af</a>:	48 8d 05 5a c0 02 00 	lea    0x2c05a(%rip),%rax        # 33310 <_ZN4core9panicking5panic17h49577d7675e529f3E>
+</pre>
+<pre><a name="72b6" href="#72b6">72b6</a>:	be 21 00 00 00       	mov    $0x21,%esi
+</pre>
+<pre><a name="72bb" href="#72bb">72bb</a>:	ff d0                	callq  *%rax
+</pre>
+<pre><a name="72bd" href="#72bd">72bd</a>:	0f 0b                	ud2    
+</pre>
+<pre><a name="72bf" href="#72bf">72bf</a>:	48 8d 3d 0a 1e 03 00 	lea    0x31e0a(%rip),%rdi        # 390d0 <str.1>
+</pre>
+<pre><a name="72c6" href="#72c6">72c6</a>:	48 8d 15 a3 01 04 00 	lea    0x401a3(%rip),%rdx        # 47470 <__dso_handle+0xb8>
+</pre>
+<pre><a name="72cd" href="#72cd">72cd</a>:	48 8d 05 3c c0 02 00 	lea    0x2c03c(%rip),%rax        # 33310 <_ZN4core9panicking5panic17h49577d7675e529f3E>
+</pre>
+<pre><a name="72d4" href="#72d4">72d4</a>:	be 1c 00 00 00       	mov    $0x1c,%esi
+</pre>
+<pre><a name="72d9" href="#72d9">72d9</a>:	ff d0                	callq  *%rax
+</pre>
+<pre><a name="72db" href="#72db">72db</a>:	0f 0b                	ud2    
+</pre>
+<pre><a name="72dd" href="#72dd">72dd</a>:	0f 1f 00             	nopl   (%rax)
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>10.fn main() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="72e0" href="#72e0">72e0</a>:	48 81 ec a8 01 00 00 	sub    $0x1a8,%rsp
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>11.    for argument in env::args() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="72e7" href="#72e7">72e7</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
+</pre>
+<pre><a name="72ee" href="#72ee">72ee</a>:	00 
+</pre>
+<pre><a name="72ef" href="#72ef">72ef</a>:	48 8d 7c 24 60       	lea    0x60(%rsp),%rdi
+</pre>
+<pre><a name="72f4" href="#72f4">72f4</a>:	ff 15 86 2a 04 00    	callq  *0x42a86(%rip)        # 49d80 <_GLOBAL_OFFSET_TABLE_+0x448>
+</pre>
+<pre><a name="72fa" href="#72fa">72fa</a>:	eb 0f                	jmp    730b <_ZN7example4main17h7d7eff44e45827fdE+0x2b>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>12.fn main() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="72fc" href="#72fc">72fc</a>:	48 8b bc 24 80 01 00 	mov    0x180(%rsp),%rdi
+</pre>
+<pre><a name="7303" href="#7303">7303</a>:	00 
+</pre>
+<pre><a name="7304" href="#7304">7304</a>:	e8 77 ed ff ff       	callq  6080 <_Unwind_Resume@plt>
+</pre>
+<pre><a name="7309" href="#7309">7309</a>:	0f 0b                	ud2    
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>13.    for argument in env::args() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="730b" href="#730b">730b</a>:	48 8d 7c 24 40       	lea    0x40(%rsp),%rdi
+</pre>
+<pre><a name="7310" href="#7310">7310</a>:	48 8d 74 24 60       	lea    0x60(%rsp),%rsi
+</pre>
+<pre><a name="7315" href="#7315">7315</a>:	e8 c6 08 00 00       	callq  7be0 <_ZN63_$LT$I$u20$as$u20$core..iter..traits..collect..IntoIterator$GT$9into_iter17h05ae62fd1309fffeE>
+</pre>
+<pre><a name="731a" href="#731a">731a</a>:	48 8b 44 24 40       	mov    0x40(%rsp),%rax
+</pre>
+<pre><a name="731f" href="#731f">731f</a>:	48 89 84 24 80 00 00 	mov    %rax,0x80(%rsp)
+</pre>
+<pre><a name="7326" href="#7326">7326</a>:	00 
+</pre>
+<pre><a name="7327" href="#7327">7327</a>:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+</pre>
+<pre><a name="732c" href="#732c">732c</a>:	48 89 84 24 88 00 00 	mov    %rax,0x88(%rsp)
+</pre>
+<pre><a name="7333" href="#7333">7333</a>:	00 
+</pre>
+<pre><a name="7334" href="#7334">7334</a>:	48 8b 44 24 50       	mov    0x50(%rsp),%rax
+</pre>
+<pre><a name="7339" href="#7339">7339</a>:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+</pre>
+<pre><a name="7340" href="#7340">7340</a>:	00 
+</pre>
+<pre><a name="7341" href="#7341">7341</a>:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+</pre>
+<pre><a name="7346" href="#7346">7346</a>:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+</pre>
+<pre><a name="734d" href="#734d">734d</a>:	00 
+</pre>
+<pre><a name="734e" href="#734e">734e</a>:	48 8d 05 0b fd 00 00 	lea    0xfd0b(%rip),%rax        # 17060 <_ZN73_$LT$std..env..Args$u20$as$u20$core..iter..traits..iterator..Iterator$GT$4next17he05dd6a796ebd410E>
+</pre>
+<pre><a name="7355" href="#7355">7355</a>:	48 8d bc 24 b8 00 00 	lea    0xb8(%rsp),%rdi
+</pre>
+<pre><a name="735c" href="#735c">735c</a>:	00 
+</pre>
+<pre><a name="735d" href="#735d">735d</a>:	48 8d b4 24 80 00 00 	lea    0x80(%rsp),%rsi
+</pre>
+<pre><a name="7364" href="#7364">7364</a>:	00 
+</pre>
+<pre><a name="7365" href="#7365">7365</a>:	ff d0                	callq  *%rax
+</pre>
+<pre><a name="7367" href="#7367">7367</a>:	eb 0f                	jmp    7378 <_ZN7example4main17h7d7eff44e45827fdE+0x98>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>14.    }
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7369" href="#7369">7369</a>:	48 8d bc 24 80 00 00 	lea    0x80(%rsp),%rdi
+</pre>
+<pre><a name="7370" href="#7370">7370</a>:	00 
+</pre>
+<pre><a name="7371" href="#7371">7371</a>:	e8 da f8 ff ff       	callq  6c50 <_ZN4core3ptr13drop_in_place17h5b1281e80eec5e2bE>
+</pre>
+<pre><a name="7376" href="#7376">7376</a>:	eb 84                	jmp    72fc <_ZN7example4main17h7d7eff44e45827fdE+0x1c>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>15.    for argument in env::args() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7378" href="#7378">7378</a>:	48 8b 84 24 b8 00 00 	mov    0xb8(%rsp),%rax
+</pre>
+<pre><a name="737f" href="#737f">737f</a>:	00 
+</pre>
+<pre><a name="7380" href="#7380">7380</a>:	48 85 c0             	test   %rax,%rax
+</pre>
+<pre><a name="7383" href="#7383">7383</a>:	0f 95 c1             	setne  %cl
+</pre>
+<pre><a name="7386" href="#7386">7386</a>:	0f b6 d1             	movzbl %cl,%edx
+</pre>
+<pre><a name="7389" href="#7389">7389</a>:	89 d0                	mov    %edx,%eax
+</pre>
+<pre><a name="738b" href="#738b">738b</a>:	74 04                	je     7391 <_ZN7example4main17h7d7eff44e45827fdE+0xb1>
+</pre>
+<pre><a name="738d" href="#738d">738d</a>:	eb 00                	jmp    738f <_ZN7example4main17h7d7eff44e45827fdE+0xaf>
+</pre>
+<pre><a name="738f" href="#738f">738f</a>:	eb 1c                	jmp    73ad <_ZN7example4main17h7d7eff44e45827fdE+0xcd>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>16.    }
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7391" href="#7391">7391</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
+</pre>
+<pre><a name="7398" href="#7398">7398</a>:	00 
+</pre>
+<pre><a name="7399" href="#7399">7399</a>:	48 8d bc 24 80 00 00 	lea    0x80(%rsp),%rdi
+</pre>
+<pre><a name="73a0" href="#73a0">73a0</a>:	00 
+</pre>
+<pre><a name="73a1" href="#73a1">73a1</a>:	e8 aa f8 ff ff       	callq  6c50 <_ZN4core3ptr13drop_in_place17h5b1281e80eec5e2bE>
+</pre>
+<pre><a name="73a6" href="#73a6">73a6</a>:	e9 05 02 00 00       	jmpq   75b0 <_ZN7example4main17h7d7eff44e45827fdE+0x2d0>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>17.    for argument in env::args() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="73ab" href="#73ab">73ab</a>:	0f 0b                	ud2    
+</pre>
+<pre><a name="73ad" href="#73ad">73ad</a>:	48 8b 84 24 c8 00 00 	mov    0xc8(%rsp),%rax
+</pre>
+<pre><a name="73b4" href="#73b4">73b4</a>:	00 
+</pre>
+<pre><a name="73b5" href="#73b5">73b5</a>:	48 89 84 24 e0 00 00 	mov    %rax,0xe0(%rsp)
+</pre>
+<pre><a name="73bc" href="#73bc">73bc</a>:	00 
+</pre>
+<pre><a name="73bd" href="#73bd">73bd</a>:	0f 10 84 24 b8 00 00 	movups 0xb8(%rsp),%xmm0
+</pre>
+<pre><a name="73c4" href="#73c4">73c4</a>:	00 
+</pre>
+<pre><a name="73c5" href="#73c5">73c5</a>:	0f 29 84 24 d0 00 00 	movaps %xmm0,0xd0(%rsp)
+</pre>
+<pre><a name="73cc" href="#73cc">73cc</a>:	00 
+</pre>
+<pre><a name="73cd" href="#73cd">73cd</a>:	48 8b 84 24 e0 00 00 	mov    0xe0(%rsp),%rax
+</pre>
+<pre><a name="73d4" href="#73d4">73d4</a>:	00 
+</pre>
+<pre><a name="73d5" href="#73d5">73d5</a>:	48 89 84 24 00 01 00 	mov    %rax,0x100(%rsp)
+</pre>
+<pre><a name="73dc" href="#73dc">73dc</a>:	00 
+</pre>
+<pre><a name="73dd" href="#73dd">73dd</a>:	0f 28 84 24 d0 00 00 	movaps 0xd0(%rsp),%xmm0
+</pre>
+<pre><a name="73e4" href="#73e4">73e4</a>:	00 
+</pre>
+<pre><a name="73e5" href="#73e5">73e5</a>:	0f 29 84 24 f0 00 00 	movaps %xmm0,0xf0(%rsp)
+</pre>
+<pre><a name="73ec" href="#73ec">73ec</a>:	00 
+</pre>
+<pre><a name="73ed" href="#73ed">73ed</a>:	c6 84 24 7f 01 00 00 	movb   $0x1,0x17f(%rsp)
+</pre>
+<pre><a name="73f4" href="#73f4">73f4</a>:	01 
+</pre>
+<pre><a name="73f5" href="#73f5">73f5</a>:	48 8b 84 24 00 01 00 	mov    0x100(%rsp),%rax
+</pre>
+<pre><a name="73fc" href="#73fc">73fc</a>:	00 
+</pre>
+<pre><a name="73fd" href="#73fd">73fd</a>:	48 89 84 24 b0 00 00 	mov    %rax,0xb0(%rsp)
+</pre>
+<pre><a name="7404" href="#7404">7404</a>:	00 
+</pre>
+<pre><a name="7405" href="#7405">7405</a>:	0f 28 84 24 f0 00 00 	movaps 0xf0(%rsp),%xmm0
+</pre>
+<pre><a name="740c" href="#740c">740c</a>:	00 
+</pre>
+<pre><a name="740d" href="#740d">740d</a>:	0f 29 84 24 a0 00 00 	movaps %xmm0,0xa0(%rsp)
+</pre>
+<pre><a name="7414" href="#7414">7414</a>:	00 
+</pre>
+<pre><a name="7415" href="#7415">7415</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
+</pre>
+<pre><a name="741c" href="#741c">741c</a>:	00 
+</pre>
+<pre><a name="741d" href="#741d">741d</a>:	48 8b 84 24 b0 00 00 	mov    0xb0(%rsp),%rax
+</pre>
+<pre><a name="7424" href="#7424">7424</a>:	00 
+</pre>
+<pre><a name="7425" href="#7425">7425</a>:	48 89 84 24 20 01 00 	mov    %rax,0x120(%rsp)
+</pre>
+<pre><a name="742c" href="#742c">742c</a>:	00 
+</pre>
+<pre><a name="742d" href="#742d">742d</a>:	0f 28 84 24 a0 00 00 	movaps 0xa0(%rsp),%xmm0
+</pre>
+<pre><a name="7434" href="#7434">7434</a>:	00 
+</pre>
+<pre><a name="7435" href="#7435">7435</a>:	0f 29 84 24 10 01 00 	movaps %xmm0,0x110(%rsp)
+</pre>
+<pre><a name="743c" href="#743c">743c</a>:	00 
+</pre>
+<pre><a name="743d" href="#743d">743d</a>:	48 8d bc 24 10 01 00 	lea    0x110(%rsp),%rdi
+</pre>
+<pre><a name="7444" href="#7444">7444</a>:	00 
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>18.        let number: i32 = match argument.parse() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7445" href="#7445">7445</a>:	e8 96 fb ff ff       	callq  6fe0 <_ZN65_$LT$alloc..string..String$u20$as$u20$core..ops..deref..Deref$GT$5deref17hb212b24021add72bE>
+</pre>
+<pre><a name="744a" href="#744a">744a</a>:	48 89 54 24 38       	mov    %rdx,0x38(%rsp)
+</pre>
+<pre><a name="744f" href="#744f">744f</a>:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+</pre>
+<pre><a name="7454" href="#7454">7454</a>:	eb 00                	jmp    7456 <_ZN7example4main17h7d7eff44e45827fdE+0x176>
+</pre>
+<pre><a name="7456" href="#7456">7456</a>:	48 8b 7c 24 30       	mov    0x30(%rsp),%rdi
+</pre>
+<pre><a name="745b" href="#745b">745b</a>:	48 8b 74 24 38       	mov    0x38(%rsp),%rsi
+</pre>
+<pre><a name="7460" href="#7460">7460</a>:	e8 5b fd ff ff       	callq  71c0 <_ZN4core3str21_$LT$impl$u20$str$GT$5parse17hcde56d0c28e9e403E>
+</pre>
+<pre><a name="7465" href="#7465">7465</a>:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+</pre>
+<pre><a name="746a" href="#746a">746a</a>:	eb 12                	jmp    747e <_ZN7example4main17h7d7eff44e45827fdE+0x19e>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>19.    }
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="746c" href="#746c">746c</a>:	48 8d bc 24 10 01 00 	lea    0x110(%rsp),%rdi
+</pre>
+<pre><a name="7473" href="#7473">7473</a>:	00 
+</pre>
+<pre><a name="7474" href="#7474">7474</a>:	e8 b7 f8 ff ff       	callq  6d30 <_ZN4core3ptr13drop_in_place17h9d6738490598f97fE>
+</pre>
+<pre><a name="7479" href="#7479">7479</a>:	e9 54 01 00 00       	jmpq   75d2 <_ZN7example4main17h7d7eff44e45827fdE+0x2f2>
+</pre>
+<pre><a name="747e" href="#747e">747e</a>:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>20.        let number: i32 = match argument.parse() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="7483" href="#7483">7483</a>:	48 89 84 24 90 01 00 	mov    %rax,0x190(%rsp)
+</pre>
+<pre><a name="748a" href="#748a">748a</a>:	00 
+</pre>
+<pre><a name="748b" href="#748b">748b</a>:	48 8b 8c 24 90 01 00 	mov    0x190(%rsp),%rcx
+</pre>
+<pre><a name="7492" href="#7492">7492</a>:	00 
+</pre>
+<pre><a name="7493" href="#7493">7493</a>:	48 89 8c 24 28 01 00 	mov    %rcx,0x128(%rsp)
+</pre>
+<pre><a name="749a" href="#749a">749a</a>:	00 
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>21.            Ok(n) => n,
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="749b" href="#749b">749b</a>:	0f b6 94 24 28 01 00 	movzbl 0x128(%rsp),%edx
+</pre>
+<pre><a name="74a2" href="#74a2">74a2</a>:	00 
+</pre>
+<pre><a name="74a3" href="#74a3">74a3</a>:	89 d1                	mov    %edx,%ecx
+</pre>
+<pre><a name="74a5" href="#74a5">74a5</a>:	f6 c1 01             	test   $0x1,%cl
+</pre>
+<pre><a name="74a8" href="#74a8">74a8</a>:	74 06                	je     74b0 <_ZN7example4main17h7d7eff44e45827fdE+0x1d0>
+</pre>
+<pre><a name="74aa" href="#74aa">74aa</a>:	eb 00                	jmp    74ac <_ZN7example4main17h7d7eff44e45827fdE+0x1cc>
+</pre>
+<pre><a name="74ac" href="#74ac">74ac</a>:	eb 30                	jmp    74de <_ZN7example4main17h7d7eff44e45827fdE+0x1fe>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>22.        let number: i32 = match argument.parse() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="74ae" href="#74ae">74ae</a>:	0f 0b                	ud2    
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>23.            Ok(n) => n,
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="74b0" href="#74b0">74b0</a>:	8b 84 24 2c 01 00 00 	mov    0x12c(%rsp),%eax
+</pre>
+<pre><a name="74b7" href="#74b7">74b7</a>:	89 84 24 98 01 00 00 	mov    %eax,0x198(%rsp)
+</pre>
+<pre><a name="74be" href="#74be">74be</a>:	89 84 24 9c 01 00 00 	mov    %eax,0x19c(%rsp)
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>24.        println!("{}", fib(number));
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="74c5" href="#74c5">74c5</a>:	48 8b 35 dc ff 03 00 	mov    0x3ffdc(%rip),%rsi        # 474a8 <__dso_handle+0xf0>
+</pre>
+<pre><a name="74cc" href="#74cc">74cc</a>:	89 c7                	mov    %eax,%edi
+</pre>
+<pre><a name="74ce" href="#74ce">74ce</a>:	48 89 74 24 20       	mov    %rsi,0x20(%rsp)
+</pre>
+<pre><a name="74d3" href="#74d3">74d3</a>:	e8 28 fd ff ff       	callq  7200 <_ZN7example3fib17h40989845736500feE>
+</pre>
+<pre><a name="74d8" href="#74d8">74d8</a>:	89 44 24 1c          	mov    %eax,0x1c(%rsp)
+</pre>
+<pre><a name="74dc" href="#74dc">74dc</a>:	eb 1c                	jmp    74fa <_ZN7example4main17h7d7eff44e45827fdE+0x21a>
+</pre>
+<pre><a name="74de" href="#74de">74de</a>:	48 8d bc 24 10 01 00 	lea    0x110(%rsp),%rdi
+</pre>
+<pre><a name="74e5" href="#74e5">74e5</a>:	00 
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>25.    }
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="74e6" href="#74e6">74e6</a>:	e8 45 f8 ff ff       	callq  6d30 <_ZN4core3ptr13drop_in_place17h9d6738490598f97fE>
+</pre>
+<pre><a name="74eb" href="#74eb">74eb</a>:	eb 00                	jmp    74ed <_ZN7example4main17h7d7eff44e45827fdE+0x20d>
+</pre>
+<pre><a name="74ed" href="#74ed">74ed</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
+</pre>
+<pre><a name="74f4" href="#74f4">74f4</a>:	00 
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>26.            Err(_) => continue,
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="74f5" href="#74f5">74f5</a>:	e9 54 fe ff ff       	jmpq   734e <_ZN7example4main17h7d7eff44e45827fdE+0x6e>
+</pre>
+<pre><a name="74fa" href="#74fa">74fa</a>:	8b 44 24 1c          	mov    0x1c(%rsp),%eax
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>27.        println!("{}", fib(number));
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="74fe" href="#74fe">74fe</a>:	89 84 24 78 01 00 00 	mov    %eax,0x178(%rsp)
+</pre>
+<pre><a name="7505" href="#7505">7505</a>:	48 8d 8c 24 78 01 00 	lea    0x178(%rsp),%rcx
+</pre>
+<pre><a name="750c" href="#750c">750c</a>:	00 
+</pre>
+<pre><a name="750d" href="#750d">750d</a>:	48 89 8c 24 70 01 00 	mov    %rcx,0x170(%rsp)
+</pre>
+<pre><a name="7514" href="#7514">7514</a>:	00 
+</pre>
+<pre><a name="7515" href="#7515">7515</a>:	48 8b 8c 24 70 01 00 	mov    0x170(%rsp),%rcx
+</pre>
+<pre><a name="751c" href="#751c">751c</a>:	00 
+</pre>
+<pre><a name="751d" href="#751d">751d</a>:	48 89 8c 24 a0 01 00 	mov    %rcx,0x1a0(%rsp)
+</pre>
+<pre><a name="7524" href="#7524">7524</a>:	00 
+</pre>
+<pre><a name="7525" href="#7525">7525</a>:	48 8d 35 b4 04 03 00 	lea    0x304b4(%rip),%rsi        # 379e0 <_ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$3fmt17h87753a9a5e7fa689E>
+</pre>
+<pre><a name="752c" href="#752c">752c</a>:	48 89 cf             	mov    %rcx,%rdi
+</pre>
+<pre><a name="752f" href="#752f">752f</a>:	e8 2c 05 00 00       	callq  7a60 <_ZN4core3fmt10ArgumentV13new17haaebda236109e592E>
+</pre>
+<pre><a name="7534" href="#7534">7534</a>:	48 89 54 24 10       	mov    %rdx,0x10(%rsp)
+</pre>
+<pre><a name="7539" href="#7539">7539</a>:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+</pre>
+<pre><a name="753e" href="#753e">753e</a>:	eb 00                	jmp    7540 <_ZN7example4main17h7d7eff44e45827fdE+0x260>
+</pre>
+<pre><a name="7540" href="#7540">7540</a>:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+</pre>
+<pre><a name="7545" href="#7545">7545</a>:	48 89 84 24 60 01 00 	mov    %rax,0x160(%rsp)
+</pre>
+<pre><a name="754c" href="#754c">754c</a>:	00 
+</pre>
+<pre><a name="754d" href="#754d">754d</a>:	48 8b 4c 24 10       	mov    0x10(%rsp),%rcx
+</pre>
+<pre><a name="7552" href="#7552">7552</a>:	48 89 8c 24 68 01 00 	mov    %rcx,0x168(%rsp)
+</pre>
+<pre><a name="7559" href="#7559">7559</a>:	00 
+</pre>
+<pre><a name="755a" href="#755a">755a</a>:	48 8d bc 24 30 01 00 	lea    0x130(%rsp),%rdi
+</pre>
+<pre><a name="7561" href="#7561">7561</a>:	00 
+</pre>
+<pre><a name="7562" href="#7562">7562</a>:	ba 02 00 00 00       	mov    $0x2,%edx
+</pre>
+<pre><a name="7567" href="#7567">7567</a>:	48 8d 8c 24 60 01 00 	lea    0x160(%rsp),%rcx
+</pre>
+<pre><a name="756e" href="#756e">756e</a>:	00 
+</pre>
+<pre><a name="756f" href="#756f">756f</a>:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+</pre>
+<pre><a name="7575" href="#7575">7575</a>:	48 8b 74 24 20       	mov    0x20(%rsp),%rsi
+</pre>
+<pre><a name="757a" href="#757a">757a</a>:	e8 41 05 00 00       	callq  7ac0 <_ZN4core3fmt9Arguments6new_v117he80a8a2255378c1dE>
+</pre>
+<pre><a name="757f" href="#757f">757f</a>:	eb 00                	jmp    7581 <_ZN7example4main17h7d7eff44e45827fdE+0x2a1>
+</pre>
+<pre><a name="7581" href="#7581">7581</a>:	48 8d 05 48 14 01 00 	lea    0x11448(%rip),%rax        # 189d0 <_ZN3std2io5stdio6_print17h74590ce298cc2720E>
+</pre>
+<pre><a name="7588" href="#7588">7588</a>:	48 8d bc 24 30 01 00 	lea    0x130(%rsp),%rdi
+</pre>
+<pre><a name="758f" href="#758f">758f</a>:	00 
+</pre>
+<pre><a name="7590" href="#7590">7590</a>:	ff d0                	callq  *%rax
+</pre>
+<pre><a name="7592" href="#7592">7592</a>:	eb 00                	jmp    7594 <_ZN7example4main17h7d7eff44e45827fdE+0x2b4>
+</pre>
+<pre><a name="7594" href="#7594">7594</a>:	48 8d bc 24 10 01 00 	lea    0x110(%rsp),%rdi
+</pre>
+<pre><a name="759b" href="#759b">759b</a>:	00 
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>28.    }
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="759c" href="#759c">759c</a>:	e8 8f f7 ff ff       	callq  6d30 <_ZN4core3ptr13drop_in_place17h9d6738490598f97fE>
+</pre>
+<pre><a name="75a1" href="#75a1">75a1</a>:	eb 00                	jmp    75a3 <_ZN7example4main17h7d7eff44e45827fdE+0x2c3>
+</pre>
+<pre><a name="75a3" href="#75a3">75a3</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
+</pre>
+<pre><a name="75aa" href="#75aa">75aa</a>:	00 
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>29.    for argument in env::args() {
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="75ab" href="#75ab">75ab</a>:	e9 9e fd ff ff       	jmpq   734e <_ZN7example4main17h7d7eff44e45827fdE+0x6e>
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>30.}</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="75b0" href="#75b0">75b0</a>:	48 81 c4 a8 01 00 00 	add    $0x1a8,%rsp
+</pre>
+<pre><a name="75b7" href="#75b7">75b7</a>:	c3                   	retq   
+</pre>
+</div></div>
+
+        <div class="code-block">
+    
+        <div class="src-block"><p>31.    }
+</p>
+</div>
+    
+        <div class="asm-block">
+    <pre><a name="75b8" href="#75b8">75b8</a>:	c6 84 24 7f 01 00 00 	movb   $0x0,0x17f(%rsp)
+</pre>
+<pre><a name="75bf" href="#75bf">75bf</a>:	00 
+</pre>
+<pre><a name="75c0" href="#75c0">75c0</a>:	48 8d bc 24 a0 00 00 	lea    0xa0(%rsp),%rdi
+</pre>
+<pre><a name="75c7" href="#75c7">75c7</a>:	00 
+</pre>
+<pre><a name="75c8" href="#75c8">75c8</a>:	e8 63 f7 ff ff       	callq  6d30 <_ZN4core3ptr13drop_in_place17h9d6738490598f97fE>
+</pre>
+<pre><a name="75cd" href="#75cd">75cd</a>:	e9 97 fd ff ff       	jmpq   7369 <_ZN7example4main17h7d7eff44e45827fdE+0x89>
+</pre>
+<pre><a name="75d2" href="#75d2">75d2</a>:	f6 84 24 7f 01 00 00 	testb  $0x1,0x17f(%rsp)
+</pre>
+<pre><a name="75d9" href="#75d9">75d9</a>:	01 
+</pre>
+<pre><a name="75da" href="#75da">75da</a>:	75 dc                	jne    75b8 <_ZN7example4main17h7d7eff44e45827fdE+0x2d8>
+</pre>
+<pre><a name="75dc" href="#75dc">75dc</a>:	e9 88 fd ff ff       	jmpq   7369 <_ZN7example4main17h7d7eff44e45827fdE+0x89>
+</pre>
+<pre><a name="75e1" href="#75e1">75e1</a>:	48 89 84 24 80 01 00 	mov    %rax,0x180(%rsp)
+</pre>
+<pre><a name="75e8" href="#75e8">75e8</a>:	00 
+</pre>
+<pre><a name="75e9" href="#75e9">75e9</a>:	89 94 24 88 01 00 00 	mov    %edx,0x188(%rsp)
+</pre>
+<pre><a name="75f0" href="#75f0">75f0</a>:	eb e0                	jmp    75d2 <_ZN7example4main17h7d7eff44e45827fdE+0x2f2>
+</pre>
+<pre><a name="75f2" href="#75f2">75f2</a>:	48 89 84 24 80 01 00 	mov    %rax,0x180(%rsp)
+</pre>
+<pre><a name="75f9" href="#75f9">75f9</a>:	00 
+</pre>
+<pre><a name="75fa" href="#75fa">75fa</a>:	89 94 24 88 01 00 00 	mov    %edx,0x188(%rsp)
+</pre>
+<pre><a name="7601" href="#7601">7601</a>:	e9 66 fe ff ff       	jmpq   746c <_ZN7example4main17h7d7eff44e45827fdE+0x18c>
+</pre>
+<pre><a name="7606" href="#7606">7606</a>:	66 2e 0f 1f 84 00 00 	nopw   %cs</pre>
+</div></div>
+</body></html>
