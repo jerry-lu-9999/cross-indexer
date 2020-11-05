@@ -90,7 +90,7 @@ for line in fr.readlines():
     m = obj_pattern.match(line)
     if m:
         address = m.group()[4:8]
-        tup = tuple(part for part in m.group().split('\t') if part) 
+        tup = tuple(re.sub(r"\:|\s+", " ", part) for part in m.group().split('\t') if part) 
         assembly_dict[address] = tup
         addr_to_line_dict[address] = line.split(":")[1]
 
@@ -101,6 +101,7 @@ for line in fr.readlines():
                 if match:
                     adref = instruction[1][0:4]
                     ref_dict[address] = adref
+
         # add address to code_block
         # if address has a corresponding line in the table (based on address_line)
         ad_str = "0x" + address
