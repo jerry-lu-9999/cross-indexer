@@ -1,21 +1,25 @@
 import subprocess
 import re
+import sys
 from subprocess import call
 
-subprocess.call("date", shell=True)
+file_name = sys.argv[1]
+executable_name = sys.argv[2]
+
+call(["rustc", "-g","-o",executable_name, file_name])
 
 f = open('objdump.txt', 'w')
-call(["objdump", "-d", "example"], stdout=f)
+call(["objdump", "-d", executable_name], stdout=f)
 f.close()
 
 f = open('output.txt', 'w')
 # subprocess.run(["llvm-dwarfdump", "-o", "output.txt", "--debug-line", "main"], check=True)
-call(["llvm-dwarfdump", "-o", "output.txt", "--debug-line", "example"], stdout=f)
+call(["llvm-dwarfdump", "-o", "output.txt", "--debug-line", executable_name], stdout=f)
 f.close()
 
 ### READ FROM RUST FILE ###
 rust_code = {}
-fc = open('example.rs', 'r')
+fc = open(file_name, 'r')
 count = 1
 for line in fc.readlines():
     rust_code[count] = line
@@ -127,8 +131,8 @@ for line in fr.readlines():
     
 fr.close()
 
-for x, y in ref_dict.items():
-   print(x, y)
+# for x, y in ref_dict.items():
+#    print(x, y)
 
 ### WRITE TO HTML ###
 html = open("cross-indexer.html", "w+")
@@ -160,12 +164,16 @@ html.write("""
                 white-space: pre-wrap;
                 word-wrap: break-word;
             }
+            .bgColor{
+                background-color: cyan;
+            }
             .asm-block,
             .src-block
             {
                 width: 50%;
                 display: table-cell;
                 vertical-align: top;
+                padding-top: -5px;
             }
             li.L0, li.L1, li.L2, li.L3,
             li.L5, li.L6, li.L7, li.L8
@@ -197,13 +205,19 @@ for key in code_block.keys():
     html.write("""
         <div class="asm-block">
     """)
+    i = 1 # for alternating the background color
     for addr in addr_list:
-        html.write("<pre>" + '<a name="'+addr+'" href="#'+addr+'">'+addr+ "</a>"+ ":" + addr_to_line_dict[addr])
+        if i % 2 == 0:
+            html.write('<pre class="bgColor">' + '<a name="'+addr+'" href="#'+addr+'">'+addr+ "</a>"+ ":" + addr_to_line_dict[addr])
+        else:
+            html.write('<pre>' + '<a name="'+addr+'" href="#'+addr+'">'+addr+ "</a>"+ ":" + addr_to_line_dict[addr])
+            
         if addr in ref_dict.keys():
             jump_addr = ref_dict[addr]
-            html.write('<a href="#'+jump_addr+'">'+jump_addr+"</a>"+"</pre>\n")
+            html.write("REF TO " + '<a href="#'+jump_addr+'">'+jump_addr+"</a>"+"</pre>\n")
         else:
             html.write("</pre>\n")
+        i +=1
             
 
     html.write("</div>")
