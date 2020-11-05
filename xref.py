@@ -94,14 +94,6 @@ for line in fr.readlines():
         assembly_dict[address] = tup
         addr_to_line_dict[address] = line.split(":")[1]
 
-        if len(tup) > 2: 
-            instruction = tup[2].split(" ")
-            if instruction[0].startswith("j") or (instruction[0].startswith("callq")):
-                match = re.match(r'[a-z0-9]{4}', instruction[1])
-                if match:
-                    adref = instruction[1][0:4]
-                    ref_dict[address] = adref
-
         # add address to code_block
         # if address has a corresponding line in the table (based on address_line)
         ad_str = "0x" + address
@@ -111,6 +103,13 @@ for line in fr.readlines():
         if ad_int > end_int:
             break
         if start_code: 
+            if len(tup) > 2: 
+                instruction = tup[2].split(" ")
+                if instruction[0].startswith("j") or (instruction[0].startswith("callq")):
+                    match = re.match(r'[a-z0-9]{4}', instruction[1])
+                    if match:
+                        adref = instruction[1][0:4]
+                        ref_dict[address] = adref
             if address in address_line.keys():
                 # get the line corresponding to that address
                 cur_line = address_line[address]
