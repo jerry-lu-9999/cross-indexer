@@ -5,8 +5,9 @@ from subprocess import call
 
 file_name = sys.argv[1]
 executable_name = sys.argv[2]
+opt_level = sys.argv[3]
 
-call(["rustc", "-g","-C", "opt-level=1","-o",executable_name, file_name])
+call(["rustc", "-g","-C", "opt-level="+ opt_level,"-o",executable_name, file_name])
 
 f = open('objdump.txt', 'w')
 call(["objdump", "-d", executable_name], stdout=f)
@@ -48,9 +49,12 @@ with open('output.txt', 'r') as llvm:
         line_number += 1
         if file_name in line:
             break
-        
-    for i in range(line_number, line_number + 6):
-        llvm.readline()
+
+    placeholder = 0 
+    while(llvm.readline().strip() != ''):
+        placeholder += 1
+
+    llvm.readline(); llvm.readline()
 
     for line in llvm:
         if line.strip() == '':
@@ -162,9 +166,6 @@ html.write("""
         <title>xref</title>
         <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
         <style>
-            a{
-
-            }
             .code-block
             {
                 display: table;
