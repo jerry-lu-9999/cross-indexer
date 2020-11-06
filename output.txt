@@ -1,296 +1,11 @@
-ex2:	file format ELF64-x86-64
+example:	file format ELF64-x86-64
 
 .debug_line contents:
 debug_line[0x00000000]
 Line table prologue:
-    total_length: 0x00000355
+    total_length: 0x000000ef
          version: 4
- prologue_length: 0x000000f2
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/alloc/src"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/iter/traits"
-include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/mem"
-file_names[  1]:
-           name: "vec.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  2]:
-           name: "exact_size.rs"
-      dir_index: 2
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  3]:
-           name: "mod.rs"
-      dir_index: 3
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000006190   2772      0      1   0             0  is_stmt
-0x0000000000006199   2774     57      1   0             0  is_stmt prologue_end
-0x00000000000061b0      0     57      1   0             0 
-0x00000000000061b5   2774     78      1   0             0 
-0x00000000000061c0   2774     34      1   0             0 
-0x00000000000061cf   2774     91      1   0             0 
-0x00000000000061d9   2775     14      1   0             0  is_stmt
-0x00000000000061de   2775     14      1   0             0  is_stmt end_sequence
-0x00000000000061e0     99      0      2   0             0  is_stmt
-0x00000000000061ef    100     30      2   0             0  is_stmt prologue_end
-0x0000000000006206    100     14      2   0             0 
-0x0000000000006213    100     21      2   0             0 
-0x000000000000622a    105     27      2   0             0  is_stmt
-0x000000000000623e    105      9      2   0             0 
-0x000000000000627b    105      9      2   0             0 
-0x0000000000006299      0      9      2   0             0 
-0x000000000000629d    105      9      2   0             0 
-0x00000000000062a3      0      9      2   0             0 
-0x00000000000062a8    107      6      2   0             0  is_stmt
-0x00000000000062b0    105      9      2   0             0  is_stmt
-0x0000000000006316    105      9      2   0             0 
-0x0000000000006334      0      9      2   0             0 
-0x0000000000006339    105      9      2   0             0 
-0x000000000000634f      0      9      2   0             0 
-0x0000000000006354    105      9      2   0             0 
-0x0000000000006383    105      9      2   0             0 
-0x00000000000063cd    105      9      2   0             0  end_sequence
-0x00000000000063d0    847      0      1   0             0  is_stmt
-0x00000000000063d9    850     19      1   0             0  is_stmt prologue_end
-0x00000000000063e7      0     19      1   0             0 
-0x00000000000063eb    852     21      1   0             0  is_stmt
-0x00000000000063f0      0     21      1   0             0 
-0x00000000000063f4    855      6      1   0             0  is_stmt
-0x00000000000063f9    855      6      1   0             0  is_stmt end_sequence
-0x0000000000006400    811      0      1   0             0  is_stmt
-0x0000000000006409    814     19      1   0             0  is_stmt prologue_end
-0x0000000000006417      0     19      1   0             0 
-0x000000000000641b    816     21      1   0             0  is_stmt
-0x0000000000006420      0     21      1   0             0 
-0x0000000000006424    819      6      1   0             0  is_stmt
-0x0000000000006429    819      6      1   0             0  is_stmt end_sequence
-0x0000000000006430   2661      0      1   0             0  is_stmt
-0x0000000000006439   2662     39      1   0             0  is_stmt prologue_end
-0x0000000000006442   2662     59      1   0             0 
-0x0000000000006447      0     59      1   0             0 
-0x000000000000644c   2662     59      1   0             0 
-0x0000000000006454      0     59      1   0             0 
-0x0000000000006463   2662      9      1   0             0 
-0x0000000000006471      0      9      1   0             0 
-0x000000000000647a   2663      6      1   0             0  is_stmt
-0x000000000000647f   2663      6      1   0             0  is_stmt end_sequence
-0x0000000000006480   2442      0      1   0             0  is_stmt
-0x000000000000648e   2447     62      1   0             0  is_stmt prologue_end
-0x0000000000006497      0     62      1   0             0 
-0x000000000000649c   2447     81      1   0             0 
-0x00000000000064a4   2447     32      1   0             0 
-0x00000000000064a9   2447     13      1   0             0 
-0x00000000000064ab   2450      6      1   0             0  is_stmt
-0x00000000000064b0   2450      6      1   0             0  is_stmt end_sequence
-0x00000000000064b0   1949      0      1   0             0  is_stmt
-0x00000000000064be   1950     40      1   0             0  is_stmt prologue_end
-0x00000000000064c8      0     40      1   0             0 
-0x00000000000064cd   1950     55      1   0             0 
-0x00000000000064d6   1950     18      1   0             0 
-0x00000000000064e4      0     18      1   0             0 
-0x00000000000064ed   1951      6      1   0             0  is_stmt
-0x00000000000064f2   1951      6      1   0             0  is_stmt end_sequence
-0x0000000000006500   2768      0      1   0             0  is_stmt
-0x0000000000006509   2778     21      1   0             0  is_stmt prologue_end
-0x000000000000650e   2781     32      1   0             0  is_stmt
-0x0000000000006524   2768      5      1   0             0  is_stmt
-0x0000000000006530      0      5      1   0             0 
-0x000000000000653a   2781     13      1   0             0  is_stmt
-0x0000000000006541   2784      5      1   0             0  is_stmt
-0x0000000000006557   2784      6      1   0             0 
-0x000000000000655c      0      6      1   0             0 
-0x0000000000006567      0      6      1   0             0  end_sequence
-0x0000000000006570    138      0      2   0             0  is_stmt
-0x0000000000006579    139      9      2   0             0  is_stmt prologue_end
-0x0000000000006586      0      9      2   0             0 
-0x000000000000658b    140      6      2   0             0  is_stmt
-0x0000000000006590    140      6      2   0             0  is_stmt end_sequence
-0x0000000000006590   2707      0      1   0             0  is_stmt
-0x000000000000659c    310      5      3   0             0  is_stmt prologue_end
-0x00000000000065be      0      5      3   0             0 
-0x00000000000065c3   2708     24      1   0             0  is_stmt
-0x00000000000065c7   2708     21      1   0             0 
-0x00000000000065c9      0     21      1   0             0 
-0x00000000000065ce   2711     22      1   0             0  is_stmt
-0x00000000000065d2   2711     43      1   0             0 
-0x00000000000065d6   2711     22      1   0             0 
-0x00000000000065e2      0     22      1   0             0 
-0x00000000000065e7   2709     14      1   0             0  is_stmt
-0x00000000000065eb   2709     46      1   0             0 
-0x00000000000065ef   2709     13      1   0             0 
-0x00000000000065f9   2708     21      1   0             0  is_stmt
-0x00000000000065fb      0     21      1   0             0 
-0x0000000000006600   2711     22      1   0             0  is_stmt
-0x0000000000006605   2713     10      1   0             0  is_stmt
-0x000000000000660a   2713     22      1   0             0 
-0x000000000000660f   2713     17      1   0             0 
-0x0000000000006622   2713      9      1   0             0 
-0x000000000000663c   2714      6      1   0             0  is_stmt
-0x0000000000006641   2714      6      1   0             0  is_stmt end_sequence
-
-debug_line[0x00000359]
-Line table prologue:
-    total_length: 0x000002f2
-         version: 4
- prologue_length: 0x000000a1
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/alloc/src"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/mem"
-file_names[  1]:
-           name: "raw_vec.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  2]:
-           name: "mod.rs"
-      dir_index: 2
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000006650    110      0      1   0             0  is_stmt
-0x000000000000665e    111     18      1   0             0  is_stmt prologue_end
-0x000000000000666c      0     18      1   0             0 
-0x0000000000006675    112      6      1   0             0  is_stmt
-0x000000000000667a    112      6      1   0             0  is_stmt end_sequence
-0x0000000000006680    242      0      1   0             0  is_stmt
-0x000000000000668f    310      5      2   0             0  is_stmt prologue_end
-0x00000000000066b7    243     12      1   0             0  is_stmt
-0x00000000000066c0      0     12      1   0             0 
-0x00000000000066c5    243     40      1   0             0 
-0x00000000000066cf    243     12      1   0             0 
-0x00000000000066d6    243      9      1   0             0 
-0x00000000000066df      0      9      1   0             0 
-0x00000000000066e4    243     12      1   0             0 
-0x00000000000066ec    452      5      2   0             0  is_stmt
-0x0000000000006700    249     29      1   0             0  is_stmt
-0x000000000000670f      0     29      1   0             0 
-0x0000000000006714    244     13      1   0             0  is_stmt
-0x000000000000671b    243      9      1   0             0  is_stmt
-0x0000000000006720    310      5      2   0             0  is_stmt
-0x0000000000006739      0      5      2   0             0 
-0x0000000000006743    250     28      1   0             0  is_stmt
-0x0000000000006750    251     30      1   0             0  is_stmt
-0x0000000000006777      0     30      1   0             0 
-0x000000000000677c    252     23      1   0             0  is_stmt
-0x0000000000006789      0     23      1   0             0 
-0x000000000000678e    252     23      1   0             0 
-0x0000000000006798      0     23      1   0             0 
-0x000000000000679d    252     22      1   0             0 
-0x00000000000067b6    252     17      1   0             0 
-0x00000000000067d5      0     17      1   0             0 
-0x00000000000067da    255      6      1   0             0  is_stmt
-0x00000000000067e2    255      6      1   0             0  is_stmt end_sequence
-0x00000000000067f0    242      0      1   0             0  is_stmt
-0x00000000000067ff    310      5      2   0             0  is_stmt prologue_end
-0x0000000000006827    243     12      1   0             0  is_stmt
-0x0000000000006830      0     12      1   0             0 
-0x0000000000006835    243     40      1   0             0 
-0x000000000000683f    243     12      1   0             0 
-0x0000000000006846    243      9      1   0             0 
-0x000000000000684f      0      9      1   0             0 
-0x0000000000006854    243     12      1   0             0 
-0x000000000000685c    452      5      2   0             0  is_stmt
-0x0000000000006870    249     29      1   0             0  is_stmt
-0x000000000000687f      0     29      1   0             0 
-0x0000000000006884    244     13      1   0             0  is_stmt
-0x000000000000688b    243      9      1   0             0  is_stmt
-0x0000000000006890    310      5      2   0             0  is_stmt
-0x00000000000068a9      0      5      2   0             0 
-0x00000000000068b3    250     28      1   0             0  is_stmt
-0x00000000000068c0    251     30      1   0             0  is_stmt
-0x00000000000068e7      0     30      1   0             0 
-0x00000000000068ec    252     23      1   0             0  is_stmt
-0x00000000000068f9      0     23      1   0             0 
-0x00000000000068fe    252     23      1   0             0 
-0x0000000000006908      0     23      1   0             0 
-0x000000000000690d    252     22      1   0             0 
-0x0000000000006926    252     17      1   0             0 
-0x0000000000006945      0     17      1   0             0 
-0x000000000000694a    255      6      1   0             0  is_stmt
-0x0000000000006952    255      6      1   0             0  is_stmt end_sequence
-0x0000000000006960    213      0      1   0             0  is_stmt
-0x0000000000006973    214     30      1   0             0  is_stmt prologue_end
-0x000000000000697e    213      5      1   0             0  is_stmt
-0x000000000000698a      0      5      1   0             0 
-0x000000000000698e    214      9      1   0             0  is_stmt
-0x000000000000699d    215      6      1   0             0  is_stmt
-0x00000000000069ac    215      5      1   0             0 
-0x00000000000069ae      0      5      1   0             0 
-0x00000000000069b9      0      5      1   0             0  end_sequence
-0x00000000000069c0    220      0      1   0             0  is_stmt
-0x00000000000069c9    221      9      1   0             0  is_stmt prologue_end
-0x00000000000069d6      0      9      1   0             0 
-0x00000000000069db    222      6      1   0             0  is_stmt
-0x00000000000069e0    222      6      1   0             0  is_stmt end_sequence
-0x00000000000069e0    508      0      1   0             0  is_stmt
-0x00000000000069e9    509     38      1   0             0  is_stmt prologue_end
-0x0000000000006a00      0     38      1   0             0 
-0x0000000000006a04    509     16      1   0             0 
-0x0000000000006a19    509      9      1   0             0 
-0x0000000000006a1b    509     22      1   0             0 
-0x0000000000006a25    509     27      1   0             0 
-0x0000000000006a3e    510     22      1   0             0  is_stmt
-0x0000000000006a56    509      9      1   0             0  is_stmt
-0x0000000000006a58    512      6      1   0             0  is_stmt
-0x0000000000006a5d    512      6      1   0             0  is_stmt end_sequence
-0x0000000000006a60    508      0      1   0             0  is_stmt
-0x0000000000006a69    509     38      1   0             0  is_stmt prologue_end
-0x0000000000006a80      0     38      1   0             0 
-0x0000000000006a84    509     16      1   0             0 
-0x0000000000006a99    509      9      1   0             0 
-0x0000000000006a9b    509     22      1   0             0 
-0x0000000000006aa5    509     27      1   0             0 
-0x0000000000006abe    510     22      1   0             0  is_stmt
-0x0000000000006ad6    509      9      1   0             0  is_stmt
-0x0000000000006ad8    512      6      1   0             0  is_stmt
-0x0000000000006add    512      6      1   0             0  is_stmt end_sequence
-
-debug_line[0x0000064f]
-Line table prologue:
-    total_length: 0x000000ca
-         version: 4
- prologue_length: 0x0000005a
+ prologue_length: 0x00000064
  min_inst_length: 1
 max_ops_per_inst: 1
  default_is_stmt: 1
@@ -311,6 +26,11 @@ standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
 standard_opcode_lengths[DW_LNS_set_isa] = 1
 include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/fmt"
 file_names[  1]:
+           name: "mod.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  2]:
            name: "num.rs"
       dir_index: 1
        mod_time: 0x00000000
@@ -318,31 +38,34 @@ file_names[  1]:
 
 Address            Line   Column File   ISA Discriminator Flags
 ------------------ ------ ------ ------ --- ------------- -------------
-0x0000000000006ae0    148      0      1   0             0  is_stmt
-0x0000000000006af3    149     20      1   0             0  is_stmt prologue_end
-0x0000000000006b05      0     20      1   0             0 
-0x0000000000006b09    149     17      1   0             0 
-0x0000000000006b0f      0     17      1   0             0 
-0x0000000000006b14    151     27      1   0             0  is_stmt
-0x0000000000006b20      0     27      1   0             0 
-0x0000000000006b2a    150     21      1   0             0  is_stmt
-0x0000000000006b36    149     17      1   0             0  is_stmt
-0x0000000000006b38      0     17      1   0             0 
-0x0000000000006b3c    151     24      1   0             0  is_stmt
-0x0000000000006b42      0     24      1   0             0 
-0x0000000000006b4c    154     21      1   0             0  is_stmt
-0x0000000000006b5a      0     21      1   0             0 
-0x0000000000006b64    152     21      1   0             0  is_stmt
-0x0000000000006b70    151     24      1   0             0  is_stmt
-0x0000000000006b74    149     17      1   0             0  is_stmt
-0x0000000000006b76    156     14      1   0             0  is_stmt
-0x0000000000006b84    156     14      1   0             0  is_stmt end_sequence
+0x0000000000006190   1986      0      1   0             0  is_stmt
+0x0000000000006191   1986     71      1   0             0  is_stmt prologue_end
+0x0000000000006194   1986     62      1   0             0 
+0x0000000000006199   1986     84      1   0             0 
+0x000000000000619b   1986     84      1   0             0  end_sequence
+0x00000000000061a0    273      0      1   0             0  is_stmt
+0x00000000000061a6    283      6      1   0             0  is_stmt prologue_end
+0x00000000000061a7    283      6      1   0             0  is_stmt end_sequence
+0x00000000000061b0    273      0      1   0             0  is_stmt
+0x00000000000061b6    283      6      1   0             0  is_stmt prologue_end
+0x00000000000061b7    283      6      1   0             0  is_stmt end_sequence
+0x00000000000061c0    148      0      2   0             0  is_stmt
+0x00000000000061ca    149     20      2   0             0  is_stmt prologue_end
+0x00000000000061d3    149     17      2   0             0 
+0x00000000000061d7    150     21      2   0             0  is_stmt
+0x00000000000061e5    151     27      2   0             0  is_stmt
+0x00000000000061ee    152     21      2   0             0  is_stmt
+0x00000000000061f4    151     24      2   0             0  is_stmt
+0x00000000000061f8    152     21      2   0             0  is_stmt
+0x0000000000006200    154     21      2   0             0  is_stmt
+0x0000000000006206    156     14      2   0             0  is_stmt
+0x000000000000620e    156     14      2   0             0  is_stmt end_sequence
 
-debug_line[0x0000071d]
+debug_line[0x000000f3]
 Line table prologue:
-    total_length: 0x000002b0
+    total_length: 0x00000151
          version: 4
- prologue_length: 0x000000a5
+ prologue_length: 0x000000f4
  min_inst_length: 1
 max_ops_per_inst: 1
  default_is_stmt: 1
@@ -361,511 +84,45 @@ standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
 standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
 standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
 standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ops"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
+include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/std/src/sys_common"
+include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ops"
+include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src"
 file_names[  1]:
+           name: "backtrace.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  2]:
            name: "function.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  2]:
-           name: "mod.rs"
-      dir_index: 2
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000006b90    227      0      1   0             0  is_stmt
-0x0000000000006b99    227      5      1   0             0  is_stmt prologue_end
-0x0000000000006ba5      0      5      1   0             0 
-0x0000000000006ba9    227      5      1   0             0 
-0x0000000000006bae    227      5      1   0             0  end_sequence
-0x0000000000006bb0    227      0      1   0             0  is_stmt
-0x0000000000006bbe    227      5      1   0             0  is_stmt prologue_end
-0x0000000000006bcb      0      5      1   0             0 
-0x0000000000006bcf    227      5      1   0             0 
-0x0000000000006be2      0      5      1   0             0 
-0x0000000000006bed      0      5      1   0             0  end_sequence
-0x0000000000006bf0    227      0      1   0             0  is_stmt
-0x0000000000006bf9    227      5      1   0             0  is_stmt prologue_end
-0x0000000000006c00    227      5      1   0             0  is_stmt end_sequence
-0x0000000000006c00    184      0      2   0             0  is_stmt
-0x0000000000006c09    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006c13    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006c20    184      0      2   0             0  is_stmt
-0x0000000000006c29    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006c2e    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006c30    184      0      2   0             0  is_stmt
-0x0000000000006c39    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006c43    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006c50    184      0      2   0             0  is_stmt
-0x0000000000006c59    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006c63    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006c70    184      0      2   0             0  is_stmt
-0x0000000000006c79    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006c83    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006c90    184      0      2   0             0  is_stmt
-0x0000000000006c9d    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006cb5      0      1      2   0             0 
-0x0000000000006cb9    184      1      2   0             0 
-0x0000000000006cc3      0      1      2   0             0 
-0x0000000000006cc7    184      1      2   0             0 
-0x0000000000006cd1      0      1      2   0             0 
-0x0000000000006cdc      0      1      2   0             0  end_sequence
-0x0000000000006ce0    184      0      2   0             0  is_stmt
-0x0000000000006ce9    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006cf3    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006d00    184      0      2   0             0  is_stmt
-0x0000000000006d09    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006d13    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006d20    184      0      2   0             0  is_stmt
-0x0000000000006d29    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006d2e    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006d30    184      0      2   0             0  is_stmt
-0x0000000000006d39    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006d43    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006d50    184      0      2   0             0  is_stmt
-0x0000000000006d59    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006d63    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006d70    184      0      2   0             0  is_stmt
-0x0000000000006d80    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006dcd      0      1      2   0             0 
-0x0000000000006dd2    184      1      2   0             0 
-0x0000000000006dfd      0      1      2   0             0 
-0x0000000000006e02    184      1      2   0             0 
-0x0000000000006e6f      0      1      2   0             0 
-0x0000000000006e74    184      1      2   0             0 
-0x0000000000006e91      0      1      2   0             0 
-0x0000000000006eaa      0      1      2   0             0  end_sequence
-0x0000000000006eb0    184      0      2   0             0  is_stmt
-0x0000000000006eb9    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006ec3    184      1      2   0             0  is_stmt end_sequence
-0x0000000000006ed0    184      0      2   0             0  is_stmt
-0x0000000000006ed9    184      1      2   0             0  is_stmt prologue_end
-0x0000000000006ee3    184      1      2   0             0  is_stmt end_sequence
-
-debug_line[0x000009d1]
-Line table prologue:
-    total_length: 0x000000ab
-         version: 4
- prologue_length: 0x0000005e
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
-file_names[  1]:
-           name: "mut_ptr.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000006ef0    422      0      1   0             0  is_stmt
-0x0000000000006efe    426      9      1   0             0  is_stmt prologue_end
-0x0000000000006f12      0      9      1   0             0 
-0x0000000000006f16    427      6      1   0             0  is_stmt
-0x0000000000006f20    427      6      1   0             0  is_stmt end_sequence
-0x0000000000006f20     36      0      1   0             0  is_stmt
-0x0000000000006f37     39      9      1   0             0  is_stmt prologue_end
-0x0000000000006f40      0      9      1   0             0 
-0x0000000000006f44     40      6      1   0             0  is_stmt
-0x0000000000006f4e     40      6      1   0             0  is_stmt end_sequence
-
-debug_line[0x00000a80]
-Line table prologue:
-    total_length: 0x00000142
-         version: 4
- prologue_length: 0x000000a5
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/alloc"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/alloc/src"
-file_names[  1]:
-           name: "layout.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  2]:
-           name: "string.rs"
-      dir_index: 2
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000006f50     92      0      1   0             0  is_stmt
-0x0000000000006f63     94     48      1   0             0  is_stmt prologue_end
-0x0000000000006f70      0     48      1   0             0 
-0x0000000000006f75     94      9      1   0             0 
-0x0000000000006f84     95      6      1   0             0  is_stmt
-0x0000000000006f93     95      6      1   0             0  is_stmt end_sequence
-0x0000000000006fa0    101      0      1   0             0  is_stmt
-0x0000000000006fa5    102      9      1   0             0  is_stmt prologue_end
-0x0000000000006fa8    103      6      1   0             0  is_stmt
-0x0000000000006faa    103      6      1   0             0  is_stmt end_sequence
-0x0000000000006fb0    109      0      1   0             0  is_stmt
-0x0000000000006fb9    110      9      1   0             0  is_stmt prologue_end
-0x0000000000006fc7      0      9      1   0             0 
-0x0000000000006fcc    111      6      1   0             0  is_stmt
-0x0000000000006fd1    111      6      1   0             0  is_stmt end_sequence
-0x0000000000006fe0   2136      0      2   0             0  is_stmt
-0x0000000000006fe9   2137     43      2   0             0  is_stmt prologue_end
-0x0000000000006ff8      0     43      2   0             0 
-0x0000000000007002   2137     18      2   0             0 
-0x0000000000007010      0     18      2   0             0 
-0x0000000000007019   2138      6      2   0             0  is_stmt
-0x000000000000701e   2138      6      2   0             0  is_stmt end_sequence
-
-debug_line[0x00000bc6]
-Line table prologue:
-    total_length: 0x000000de
-         version: 4
- prologue_length: 0x0000005f
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
-file_names[  1]:
-           name: "non_null.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000007020    566      0      1   0             0  is_stmt
-0x0000000000007029    569     41      1   0             0  is_stmt prologue_end
-0x0000000000007033      0     41      1   0             0 
-0x0000000000007038    569     18      1   0             0 
-0x0000000000007041      0     18      1   0             0 
-0x0000000000007045    570      6      1   0             0  is_stmt
-0x000000000000704a    570      6      1   0             0  is_stmt end_sequence
-0x0000000000007050    154      0      1   0             0  is_stmt
-0x0000000000007059    156     18      1   0             0  is_stmt prologue_end
-0x000000000000705d    157      6      1   0             0  is_stmt
-0x0000000000007066    157      6      1   0             0  is_stmt end_sequence
-0x0000000000007070    175      0      1   0             0  is_stmt
-0x0000000000007075    177      6      1   0             0  is_stmt prologue_end
-0x000000000000707a    177      6      1   0             0  is_stmt end_sequence
-0x0000000000007080    175      0      1   0             0  is_stmt
-0x0000000000007085    177      6      1   0             0  is_stmt prologue_end
-0x000000000000708a    177      6      1   0             0  is_stmt end_sequence
-
-debug_line[0x00000ca8]
-Line table prologue:
-    total_length: 0x0000023f
-         version: 4
- prologue_length: 0x00000123
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/std/src"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/num"
-include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/str"
-include_directories[  4] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src"
-file_names[  1]:
-           name: "rt.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  2]:
-           name: "mod.rs"
       dir_index: 2
        mod_time: 0x00000000
          length: 0x00000000
 file_names[  3]:
-           name: "mod.rs"
+           name: "hint.rs"
       dir_index: 3
        mod_time: 0x00000000
          length: 0x00000000
-file_names[  4]:
-           name: "hint.rs"
-      dir_index: 4
-       mod_time: 0x00000000
-         length: 0x00000000
 
 Address            Line   Column File   ISA Discriminator Flags
 ------------------ ------ ------ ------ --- ------------- -------------
-0x0000000000007090     60      0      1   0             0  is_stmt
-0x00000000000070aa     66     10      1   0             0  is_stmt prologue_end
-0x00000000000070af     66      9      1   0             0 
-0x00000000000070b4     65      5      1   0             0  is_stmt
-0x00000000000070db      0      5      1   0             0 
-0x00000000000070df     70      2      1   0             0  is_stmt
-0x00000000000070e4     70      2      1   0             0  is_stmt end_sequence
-0x00000000000070f0     66      0      1   0             0  is_stmt
-0x00000000000070f9     66     77      1   0             0  is_stmt prologue_end
-0x00000000000070fc     66     18      1   0             0 
-0x000000000000710a      0     18      1   0             0 
-0x000000000000710e     66     91      1   0             0 
-0x0000000000007113     66     91      1   0             0  end_sequence
-0x0000000000007120     83      0      2   0             0  is_stmt
-0x0000000000007129     85     30      2   0             0  is_stmt prologue_end
-0x000000000000712d     86     18      2   0             0  is_stmt
-0x0000000000007136     86     18      2   0             0  is_stmt end_sequence
-0x0000000000007140    105      0      2   0             0  is_stmt
-0x0000000000007145    107     18      2   0             0  is_stmt prologue_end
-0x000000000000714a    107     18      2   0             0  is_stmt end_sequence
-0x0000000000007150   3474      0      2   0             0  is_stmt
-0x000000000000715e   3475     17      2   0             0  is_stmt prologue_end
-0x000000000000716f      0     17      2   0             0 
-0x0000000000007173   3476     14      2   0             0  is_stmt
-0x0000000000007178   3476     14      2   0             0  is_stmt end_sequence
-0x0000000000007180    421      0      3   0             0  is_stmt
-0x000000000000718e    424     14      3   0             0  is_stmt prologue_end
-0x00000000000071ab      0     14      3   0             0 
-0x00000000000071b4    425      2      3   0             0  is_stmt
-0x00000000000071b9    425      2      3   0             0  is_stmt end_sequence
-0x00000000000071c0   4349      0      3   0             0  is_stmt
-0x00000000000071ce   4350      9      3   0             0  is_stmt prologue_end
-0x00000000000071e3   4351      6      3   0             0  is_stmt
-0x00000000000071ed   4351      6      3   0             0  is_stmt end_sequence
-0x00000000000071f0    114      0      4   0             0  is_stmt
-0x00000000000071f4    124      9      4   0             0  is_stmt prologue_end
-0x00000000000071f4    128      2      4   0             0  is_stmt
-0x00000000000071f6    128      2      4   0             0  is_stmt end_sequence
+0x0000000000006210    133      0      1   0             0  is_stmt
+0x0000000000006211    137     18      1   0             0  is_stmt prologue_end
+0x0000000000006216    140      5      1   0             0  is_stmt
+0x000000000000621b    143      2      1   0             0  is_stmt
+0x000000000000621d    143      2      1   0             0  is_stmt end_sequence
+0x0000000000006220    227      0      2   0             0  is_stmt
+0x0000000000006221    227      5      2   0             0  is_stmt prologue_end
+0x0000000000006225    227      5      2   0             0  is_stmt end_sequence
+0x0000000000006230    114      0      3   0             0  is_stmt
+0x0000000000006234    124      9      3   0             0  is_stmt prologue_end
+0x0000000000006234    128      2      3   0             0  is_stmt
+0x0000000000006236    128      2      3   0             0  is_stmt end_sequence
 
-debug_line[0x00000eeb]
+debug_line[0x00000248]
 Line table prologue:
-    total_length: 0x0000013d
+    total_length: 0x0000012b
          version: 4
- prologue_length: 0x00000022
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-file_names[  1]:
-           name: "example.rs"
-      dir_index: 0
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000007200      3      0      1   0             0  is_stmt
-0x0000000000007208      4      8      1   0             0  is_stmt prologue_end
-0x000000000000720f      4      5      1   0             0 
-0x0000000000007211      0      5      1   0             0 
-0x0000000000007215      7     13      1   0             0  is_stmt
-0x0000000000007226      0     13      1   0             0 
-0x000000000000722a      5      9      1   0             0  is_stmt
-0x000000000000722e      4      5      1   0             0  is_stmt
-0x0000000000007230      0      5      1   0             0 
-0x0000000000007234      7      9      1   0             0  is_stmt
-0x000000000000723d      0      9      1   0             0 
-0x0000000000007241      7     27      1   0             0 
-0x000000000000724f      0     27      1   0             0 
-0x0000000000007253      7     22      1   0             0 
-0x000000000000725c      0     22      1   0             0 
-0x0000000000007264      7      9      1   0             0 
-0x0000000000007272      0      9      1   0             0 
-0x0000000000007276      7      9      1   0             0 
-0x000000000000727a      9      2      1   0             0  is_stmt
-0x0000000000007283      7     13      1   0             0  is_stmt
-0x00000000000072a1      7     27      1   0             0 
-0x00000000000072bf      7      9      1   0             0 
-0x00000000000072dd      7      9      1   0             0  end_sequence
-0x00000000000072e0     11      0      1   0             0  is_stmt
-0x00000000000072e7     12     21      1   0             0  is_stmt prologue_end
-0x00000000000072fc     11      1      1   0             0  is_stmt
-0x000000000000730b     12     21      1   0             0  is_stmt
-0x000000000000734e     12     21      1   0             0 
-0x0000000000007369     18      5      1   0             0  is_stmt
-0x0000000000007378     12      9      1   0             0  is_stmt
-0x0000000000007391     18      5      1   0             0  is_stmt
-0x0000000000007399     18      5      1   0             0 
-0x00000000000073ab     12     21      1   0             0  is_stmt
-0x00000000000073ad     12      9      1   0             0 
-0x00000000000073cd     12      9      1   0             0 
-0x0000000000007415     12     21      1   0             0 
-0x0000000000007445     13     33      1   0             0  is_stmt
-0x0000000000007456      0     33      1   0             0 
-0x0000000000007460     13     33      1   0             0 
-0x000000000000746c     18      5      1   0             0  is_stmt
-0x000000000000747e      0      5      1   0             0 
-0x0000000000007483     13     33      1   0             0  is_stmt
-0x000000000000749b     14     13      1   0             0  is_stmt
-0x00000000000074ae     13     33      1   0             0  is_stmt
-0x00000000000074b0     14     16      1   0             0  is_stmt
-0x00000000000074be     14     22      1   0             0 
-0x00000000000074c5     17     18      1   0             0  is_stmt
-0x00000000000074cc     17     24      1   0             0 
-0x00000000000074de      0     24      1   0             0 
-0x00000000000074e6     18      5      1   0             0  is_stmt
-0x00000000000074ed     18      5      1   0             0 
-0x00000000000074f5     15     23      1   0             0  is_stmt
-0x00000000000074fa      0     23      1   0             0 
-0x00000000000074fe     17     24      1   0             0  is_stmt
-0x000000000000750d     17      9      1   0             0 
-0x0000000000007525     17      9      1   0             0 
-0x0000000000007540      0      9      1   0             0 
-0x0000000000007545     17      9      1   0             0 
-0x000000000000757a     17      9      1   0             0 
-0x0000000000007594      0      9      1   0             0 
-0x000000000000759c     18      5      1   0             0  is_stmt
-0x00000000000075a3     18      5      1   0             0 
-0x00000000000075ab     12      5      1   0             0  is_stmt
-0x00000000000075b0     19      2      1   0             0  is_stmt
-0x00000000000075b8     18      5      1   0             0  is_stmt
-0x00000000000075e1      0      5      1   0             0 
-0x0000000000007606      0      5      1   0             0  end_sequence
-
-debug_line[0x0000102c]
-Line table prologue:
-    total_length: 0x0000016b
-         version: 4
- prologue_length: 0x0000009f
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/fmt"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src"
-file_names[  1]:
-           name: "mod.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  2]:
-           name: "option.rs"
-      dir_index: 2
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000007640   1986      0      1   0             0  is_stmt
-0x000000000000764e   1986     71      1   0             0  is_stmt prologue_end
-0x0000000000007651   1986     62      1   0             0 
-0x000000000000765a      0     62      1   0             0 
-0x000000000000765e   1986     84      1   0             0 
-0x0000000000007668   1986     84      1   0             0  end_sequence
-0x0000000000007670    142      0      2   0             0  is_stmt
-0x000000000000767e    142     48      2   0             0  is_stmt prologue_end
-0x0000000000007697      0     48      2   0             0 
-0x000000000000769e    153     56      2   0             0  is_stmt
-0x00000000000076af    142     48      2   0             0  is_stmt
-0x00000000000076d1    142     48      2   0             0 
-0x00000000000076d3      0     48      2   0             0 
-0x00000000000076da    142     48      2   0             0 
-0x00000000000076f2    142     48      2   0             0 
-0x0000000000007703    142     48      2   0             0 
-0x0000000000007705      0     48      2   0             0 
-0x0000000000007711    153     56      2   0             0  is_stmt
-0x000000000000771b    142     48      2   0             0  is_stmt
-0x000000000000773d    142     48      2   0             0 
-0x000000000000773f    142     53      2   0             0 
-0x000000000000774d    142     53      2   0             0  end_sequence
-0x0000000000007750    142      0      2   0             0  is_stmt
-0x000000000000775e    142     16      2   0             0  is_stmt prologue_end
-0x000000000000777f      0     16      2   0             0 
-0x0000000000007784    142     16      2   0             0 
-0x000000000000779a      0     16      2   0             0 
-0x00000000000077a3    142     16      2   0             0 
-0x00000000000077b4      0     16      2   0             0 
-0x00000000000077b9    142     16      2   0             0 
-0x00000000000077e5    153     56      2   0             0  is_stmt
-0x0000000000007806    153     56      2   0             0 
-0x0000000000007817    142     16      2   0             0  is_stmt
-0x000000000000781b    142     25      2   0             0 
-0x0000000000007829    142     25      2   0             0  end_sequence
-
-debug_line[0x0000119b]
-Line table prologue:
-    total_length: 0x00000195
-         version: 4
- prologue_length: 0x000000a7
+ prologue_length: 0x000000b6
  min_inst_length: 1
 max_ops_per_inst: 1
  default_is_stmt: 1
@@ -887,11 +144,16 @@ standard_opcode_lengths[DW_LNS_set_isa] = 1
 include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
 include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/convert"
 file_names[  1]:
-           name: "unique.rs"
+           name: "non_null.rs"
       dir_index: 1
        mod_time: 0x00000000
          length: 0x00000000
 file_names[  2]:
+           name: "unique.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  3]:
            name: "mod.rs"
       dir_index: 2
        mod_time: 0x00000000
@@ -899,45 +161,27 @@ file_names[  2]:
 
 Address            Line   Column File   ISA Discriminator Flags
 ------------------ ------ ------ ------ --- ------------- -------------
-0x0000000000007830     89      0      1   0             0  is_stmt
-0x0000000000007839     91     18      1   0             0  is_stmt prologue_end
-0x000000000000783d     92      6      1   0             0  is_stmt
-0x0000000000007846     92      6      1   0             0  is_stmt end_sequence
-0x0000000000007850     89      0      1   0             0  is_stmt
-0x0000000000007859     91     18      1   0             0  is_stmt prologue_end
-0x000000000000785d     92      6      1   0             0  is_stmt
-0x0000000000007866     92      6      1   0             0  is_stmt end_sequence
-0x0000000000007870    137      0      1   0             0  is_stmt
-0x0000000000007879    141     40      1   0             0  is_stmt prologue_end
-0x0000000000007883      0     40      1   0             0 
-0x0000000000007888    141     18      1   0             0 
-0x0000000000007894      0     18      1   0             0 
-0x0000000000007898    142      6      1   0             0  is_stmt
-0x000000000000789d    142      6      1   0             0  is_stmt end_sequence
-0x00000000000078a0    137      0      1   0             0  is_stmt
-0x00000000000078a9    141     40      1   0             0  is_stmt prologue_end
-0x00000000000078b3      0     40      1   0             0 
-0x00000000000078b8    141     18      1   0             0 
-0x00000000000078c1      0     18      1   0             0 
-0x00000000000078c5    142      6      1   0             0  is_stmt
-0x00000000000078ca    142      6      1   0             0  is_stmt end_sequence
-0x00000000000078d0    107      0      1   0             0  is_stmt
-0x00000000000078d5    109      6      1   0             0  is_stmt prologue_end
-0x00000000000078da    109      6      1   0             0  is_stmt end_sequence
-0x00000000000078e0    107      0      1   0             0  is_stmt
-0x00000000000078e5    109      6      1   0             0  is_stmt prologue_end
-0x00000000000078ea    109      6      1   0             0  is_stmt end_sequence
-0x00000000000078f0    563      0      2   0             0  is_stmt
-0x00000000000078f9    564      9      2   0             0  is_stmt prologue_end
-0x0000000000007903      0      9      2   0             0 
-0x0000000000007908    565      6      2   0             0  is_stmt
-0x000000000000790d    565      6      2   0             0  is_stmt end_sequence
+0x0000000000006240    566      0      1   0             0  is_stmt
+0x0000000000006241    569     41      1   0             0  is_stmt prologue_end
+0x0000000000006246    569     18      1   0             0 
+0x000000000000624e    570      6      1   0             0  is_stmt
+0x0000000000006250    570      6      1   0             0  is_stmt end_sequence
+0x0000000000006250    107      0      2   0             0  is_stmt
+0x0000000000006253    109      6      2   0             0  is_stmt prologue_end
+0x0000000000006254    109      6      2   0             0  is_stmt end_sequence
+0x0000000000006260    154      0      1   0             0  is_stmt
+0x0000000000006263    157      6      1   0             0  is_stmt prologue_end
+0x0000000000006264    157      6      1   0             0  is_stmt end_sequence
+0x0000000000006270    563      0      3   0             0  is_stmt
+0x0000000000006271    564      9      3   0             0  is_stmt prologue_end
+0x0000000000006276    565      6      3   0             0  is_stmt
+0x0000000000006278    565      6      3   0             0  is_stmt end_sequence
 
-debug_line[0x00001334]
+debug_line[0x00000377]
 Line table prologue:
-    total_length: 0x000000c3
+    total_length: 0x00000237
          version: 4
- prologue_length: 0x0000005a
+ prologue_length: 0x00000150
  min_inst_length: 1
 max_ops_per_inst: 1
  default_is_stmt: 1
@@ -956,122 +200,12 @@ standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
 standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
 standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
 standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
-file_names[  1]:
-           name: "mod.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x0000000000007910    264      0      1   0             0  is_stmt
-0x000000000000791e    268     26      1   0             0  is_stmt prologue_end
-0x0000000000007928    268     14      1   0             0 
-0x0000000000007944    269      2      1   0             0  is_stmt
-0x0000000000007949    269      2      1   0             0  is_stmt end_sequence
-0x0000000000007950    300      0      1   0             0  is_stmt
-0x000000000000795e    303     26      1   0             0  is_stmt prologue_end
-0x0000000000007968    303     14      1   0             0 
-0x0000000000007984    304      2      1   0             0  is_stmt
-0x0000000000007989    304      2      1   0             0  is_stmt end_sequence
-0x0000000000007990    300      0      1   0             0  is_stmt
-0x000000000000799e    303     26      1   0             0  is_stmt prologue_end
-0x00000000000079a8    303     14      1   0             0 
-0x00000000000079c4    304      2      1   0             0  is_stmt
-0x00000000000079c9    304      2      1   0             0  is_stmt end_sequence
-
-debug_line[0x000013fb]
-Line table prologue:
-    total_length: 0x00000110
-         version: 4
- prologue_length: 0x0000005a
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/fmt"
-file_names[  1]:
-           name: "mod.rs"
-      dir_index: 1
-       mod_time: 0x00000000
-         length: 0x00000000
-
-Address            Line   Column File   ISA Discriminator Flags
------------------- ------ ------ ------ --- ------------- -------------
-0x00000000000079d0   1986      0      1   0             0  is_stmt
-0x00000000000079de   1986     71      1   0             0  is_stmt prologue_end
-0x00000000000079e1   1986     62      1   0             0 
-0x00000000000079ea      0     62      1   0             0 
-0x00000000000079ee   1986     84      1   0             0 
-0x00000000000079f8   1986     84      1   0             0  end_sequence
-0x0000000000007a00    273      0      1   0             0  is_stmt
-0x0000000000007a0e    282     42      1   0             0  is_stmt prologue_end
-0x0000000000007a22      0     42      1   0             0 
-0x0000000000007a27    282     68      1   0             0 
-0x0000000000007a35      0     68      1   0             0 
-0x0000000000007a39    282     18      1   0             0 
-0x0000000000007a48    283      6      1   0             0  is_stmt
-0x0000000000007a57    283      6      1   0             0  is_stmt end_sequence
-0x0000000000007a60    273      0      1   0             0  is_stmt
-0x0000000000007a6e    282     42      1   0             0  is_stmt prologue_end
-0x0000000000007a82      0     42      1   0             0 
-0x0000000000007a87    282     68      1   0             0 
-0x0000000000007a95      0     68      1   0             0 
-0x0000000000007a99    282     18      1   0             0 
-0x0000000000007aa8    283      6      1   0             0  is_stmt
-0x0000000000007ab7    283      6      1   0             0  is_stmt end_sequence
-0x0000000000007ac0    319      0      1   0             0  is_stmt
-0x0000000000007adb    320     34      1   0             0  is_stmt prologue_end
-0x0000000000007ae3    320      9      1   0             0 
-0x0000000000007b03    321      6      1   0             0  is_stmt
-0x0000000000007b08    321      6      1   0             0  is_stmt end_sequence
-
-debug_line[0x0000150f]
-Line table prologue:
-    total_length: 0x000002de
-         version: 4
- prologue_length: 0x000001e4
- min_inst_length: 1
-max_ops_per_inst: 1
- default_is_stmt: 1
-       line_base: -5
-      line_range: 14
-     opcode_base: 13
-standard_opcode_lengths[DW_LNS_copy] = 0
-standard_opcode_lengths[DW_LNS_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_advance_line] = 1
-standard_opcode_lengths[DW_LNS_set_file] = 1
-standard_opcode_lengths[DW_LNS_set_column] = 1
-standard_opcode_lengths[DW_LNS_negate_stmt] = 0
-standard_opcode_lengths[DW_LNS_set_basic_block] = 0
-standard_opcode_lengths[DW_LNS_const_add_pc] = 0
-standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
-standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
-standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
-standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/std/src/sys_common"
+include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/std/src"
 include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/std/src/sys/unix/process"
-include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src"
-include_directories[  4] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/slice"
-include_directories[  5] = "/builddir/build/BUILD/rustc-1.47.0-src/library/std/src"
-include_directories[  6] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/iter/traits"
+include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ops"
+include_directories[  4] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
 file_names[  1]:
-           name: "backtrace.rs"
+           name: "rt.rs"
       dir_index: 1
        mod_time: 0x00000000
          length: 0x00000000
@@ -1081,7 +215,7 @@ file_names[  2]:
        mod_time: 0x00000000
          length: 0x00000000
 file_names[  3]:
-           name: "cmp.rs"
+           name: "function.rs"
       dir_index: 3
        mod_time: 0x00000000
          length: 0x00000000
@@ -1092,58 +226,49 @@ file_names[  4]:
          length: 0x00000000
 file_names[  5]:
            name: "process.rs"
-      dir_index: 5
-       mod_time: 0x00000000
-         length: 0x00000000
-file_names[  6]:
-           name: "collect.rs"
-      dir_index: 6
+      dir_index: 1
        mod_time: 0x00000000
          length: 0x00000000
 
 Address            Line   Column File   ISA Discriminator Flags
 ------------------ ------ ------ ------ --- ------------- -------------
-0x0000000000007b10    133      0      1   0             0  is_stmt
-0x0000000000007b19    137     18      1   0             0  is_stmt prologue_end
-0x0000000000007b20    133      1      1   0             0  is_stmt
-0x0000000000007b2c    140      5      1   0             0  is_stmt
-0x0000000000007b33    143      2      1   0             0  is_stmt
-0x0000000000007b38    143      1      1   0             0 
-0x0000000000007b3a      0      1      1   0             0 
-0x0000000000007b45      0      1      1   0             0  end_sequence
-0x0000000000007b50    398      0      2   0             0  is_stmt
-0x0000000000007b55    399      9      2   0             0  is_stmt prologue_end
-0x0000000000007b58    400      6      2   0             0  is_stmt
-0x0000000000007b5a    400      6      2   0             0  is_stmt end_sequence
-0x0000000000007b60   1046      0      3   0             0  is_stmt
-0x0000000000007b6d   1046     52      3   0             0  is_stmt prologue_end
-0x0000000000007b76   1046     73      3   0             0 
-0x0000000000007b81   1046     73      3   0             0  end_sequence
-0x0000000000007b90   6435      0      4   0             0  is_stmt
-0x0000000000007b9e   6442     16      4   0             0  is_stmt prologue_end
-0x0000000000007bad      0     16      4   0             0 
-0x0000000000007bb7   6443      2      4   0             0  is_stmt
-0x0000000000007bbc   6443      2      4   0             0  is_stmt end_sequence
-0x0000000000007bc0   1667      0      5   0             0  is_stmt
-0x0000000000007bc6   1668      9      5   0             0  is_stmt prologue_end
-0x0000000000007bcf      0      9      5   0             0 
-0x0000000000007bd3   1669      6      5   0             0  is_stmt
-0x0000000000007bd8   1669      6      5   0             0  is_stmt end_sequence
-0x0000000000007be0    248      0      6   0             0  is_stmt
-0x0000000000007be3    249      9      6   0             0  is_stmt prologue_end
-0x0000000000007c01    250      6      6   0             0  is_stmt
-0x0000000000007c02    250      6      6   0             0  is_stmt end_sequence
-0x0000000000007c10   1701      0      5   0             0  is_stmt
-0x0000000000007c16   1702      9      5   0             0  is_stmt prologue_end
-0x0000000000007c20      0      9      5   0             0 
-0x0000000000007c26   1703      6      5   0             0  is_stmt
-0x0000000000007c28   1703      6      5   0             0  is_stmt end_sequence
+0x0000000000006280     60      0      1   0             0  is_stmt
+0x0000000000006287     66     10      1   0             0  is_stmt prologue_end
+0x000000000000628b     65      5      1   0             0  is_stmt
+0x000000000000629b     70      2      1   0             0  is_stmt
+0x000000000000629d     70      2      1   0             0  is_stmt end_sequence
+0x00000000000062a0     66      0      1   0             0  is_stmt
+0x00000000000062a1     66     77      1   0             0  is_stmt prologue_end
+0x00000000000062a4     66     18      1   0             0 
+0x00000000000062ae     66     91      1   0             0 
+0x00000000000062b0     66     91      1   0             0  end_sequence
+0x00000000000062b0    398      0      2   0             0  is_stmt
+0x00000000000062b0    399      9      2   0             0  is_stmt prologue_end
+0x00000000000062b3    400      6      2   0             0  is_stmt
+0x00000000000062b4    400      6      2   0             0  is_stmt end_sequence
+0x00000000000062c0    227      0      3   0             0  is_stmt
+0x00000000000062c1    227      5      3   0             0  is_stmt prologue_end
+0x00000000000062cb    227      5      3   0             0  is_stmt end_sequence
+0x00000000000062d0    227      0      3   0             0  is_stmt
+0x00000000000062d8    227      5      3   0             0  is_stmt prologue_end
+0x00000000000062df    227      5      3   0             0  is_stmt end_sequence
+0x00000000000062e0    184      0      4   0             0  is_stmt
+0x00000000000062e0    184      1      4   0             0  is_stmt prologue_end
+0x00000000000062e1    184      1      4   0             0  is_stmt end_sequence
+0x00000000000062f0   1667      0      5   0             0  is_stmt
+0x00000000000062f1   1668      9      5   0             0  is_stmt prologue_end
+0x00000000000062f6   1669      6      5   0             0  is_stmt
+0x00000000000062f8   1669      6      5   0             0  is_stmt end_sequence
+0x0000000000006300   1701      0      5   0             0  is_stmt
+0x000000000000630b   1702      9      5   0             0  is_stmt prologue_end
+0x0000000000006310   1703      6      5   0             0  is_stmt
+0x0000000000006312   1703      6      5   0             0  is_stmt end_sequence
 
-debug_line[0x000017f1]
+debug_line[0x000005b2]
 Line table prologue:
-    total_length: 0x000000df
+    total_length: 0x000005fd
          version: 4
- prologue_length: 0x00000059
+ prologue_length: 0x00000217
  min_inst_length: 1
 max_ops_per_inst: 1
  default_is_stmt: 1
@@ -1163,44 +288,227 @@ standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
 standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
 standard_opcode_lengths[DW_LNS_set_isa] = 1
 include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/alloc/src"
+include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src"
+include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/fmt"
+include_directories[  4] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
+include_directories[  5] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/iter/traits"
+include_directories[  6] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/slice"
 file_names[  1]:
-           name: "alloc.rs"
+           name: "vec.rs"
       dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  2]:
+           name: "cmp.rs"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  3]:
+           name: "mod.rs"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  4]:
+           name: "mod.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  5]:
+           name: "unique.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  6]:
+           name: "mut_ptr.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  7]:
+           name: "non_null.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  8]:
+           name: "const_ptr.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  9]:
+           name: "exact_size.rs"
+      dir_index: 5
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 10]:
+           name: "mod.rs"
+      dir_index: 6
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 11]:
+           name: "raw_vec.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[ 12]:
+           name: "option.rs"
+      dir_index: 2
        mod_time: 0x00000000
          length: 0x00000000
 
 Address            Line   Column File   ISA Discriminator Flags
 ------------------ ------ ------ ------ --- ------------- -------------
-0x0000000000007c30     91      0      1   0             0  is_stmt
-0x0000000000007c43     92     34      1   0             0  is_stmt prologue_end
-0x0000000000007c48      0     34      1   0             0 
-0x0000000000007c4d     92     34      1   0             0 
-0x0000000000007c55      0     34      1   0             0 
-0x0000000000007c5a     92     49      1   0             0 
-0x0000000000007c69      0     49      1   0             0 
-0x0000000000007c78     92     14      1   0             0 
-0x0000000000007c7e     93      2      1   0             0  is_stmt
-0x0000000000007c83     93      2      1   0             0  is_stmt end_sequence
-0x0000000000007c90    212      0      1   0             0  is_stmt
-0x0000000000007ca8    213     12      1   0             0  is_stmt prologue_end
-0x0000000000007cad      0     12      1   0             0 
-0x0000000000007cb2    213     12      1   0             0 
-0x0000000000007cb7      0     12      1   0             0 
-0x0000000000007cc1    213     12      1   0             0 
-0x0000000000007cc5    213      9      1   0             0 
-0x0000000000007cc9      0      9      1   0             0 
-0x0000000000007cce    216     30      1   0             0  is_stmt
-0x0000000000007cd8    216     44      1   0             0 
-0x0000000000007ce7    216     22      1   0             0 
-0x0000000000007cec    213      9      1   0             0  is_stmt
-0x0000000000007cee    218      6      1   0             0  is_stmt
-0x0000000000007cf3    218      6      1   0             0  is_stmt end_sequence
+0x0000000000006320   2772      0      1   0             0  is_stmt
+0x0000000000006325   2774     57      1   0             0  is_stmt prologue_end
+0x0000000000006330   2774     78      1   0             0 
+0x0000000000006334   2774     34      1   0             0 
+0x0000000000006348   2774     91      1   0             0 
+0x000000000000634d   2775     14      1   0             0  is_stmt
+0x0000000000006353   2775     14      1   0             0  is_stmt end_sequence
+0x0000000000006360   1046      0      2   0             0  is_stmt
+0x0000000000006360   1046     52      2   0             0  is_stmt prologue_end
+0x0000000000006369   1046     73      2   0             0 
+0x000000000000636a   1046     73      2   0             0  end_sequence
+0x0000000000006370    319      0      3   0             0  is_stmt
+0x0000000000006373    320      9      3   0             0  is_stmt prologue_end
+0x0000000000006399    321      6      3   0             0  is_stmt
+0x000000000000639a    321      6      3   0             0  is_stmt end_sequence
+0x00000000000063a0    184      0      4   0             0  is_stmt
+0x00000000000063a1    184      1      4   0             0  is_stmt prologue_end
+0x00000000000063a8    184      1      4   0             0  is_stmt end_sequence
+0x00000000000063b0    184      0      4   0             0  is_stmt
+0x00000000000063b1    184      1      4   0             0  is_stmt prologue_end
+0x00000000000063b8    184      1      4   0             0  is_stmt end_sequence
+0x00000000000063c0    184      0      4   0             0  is_stmt
+0x00000000000063c1    184      1      4   0             0  is_stmt prologue_end
+0x00000000000063c8    184      1      4   0             0  is_stmt end_sequence
+0x00000000000063d0    184      0      4   0             0  is_stmt
+0x00000000000063d4    184      1      4   0             0  is_stmt prologue_end
+0x00000000000063e3    184      1      4   0             0  is_stmt end_sequence
+0x00000000000063f0    184      0      4   0             0  is_stmt
+0x00000000000063f1    184      1      4   0             0  is_stmt prologue_end
+0x00000000000063f8    184      1      4   0             0  is_stmt end_sequence
+0x0000000000006400    184      0      4   0             0  is_stmt
+0x0000000000006408    184      1      4   0             0  is_stmt prologue_end
+0x000000000000642d      0      1      4   0             0 
+0x0000000000006430    184      1      4   0             0 
+0x0000000000006447      0      1      4   0             0 
+0x0000000000006451      0      1      4   0             0  end_sequence
+0x0000000000006460    184      0      4   0             0  is_stmt
+0x0000000000006461    184      1      4   0             0  is_stmt prologue_end
+0x0000000000006468    184      1      4   0             0  is_stmt end_sequence
+0x0000000000006470    264      0      4   0             0  is_stmt
+0x0000000000006476    269      2      4   0             0  is_stmt prologue_end
+0x0000000000006477    269      2      4   0             0  is_stmt end_sequence
+0x0000000000006480    300      0      4   0             0  is_stmt
+0x0000000000006486    304      2      4   0             0  is_stmt prologue_end
+0x0000000000006487    304      2      4   0             0  is_stmt end_sequence
+0x0000000000006490     89      0      5   0             0  is_stmt
+0x0000000000006493     92      6      5   0             0  is_stmt prologue_end
+0x0000000000006494     92      6      5   0             0  is_stmt end_sequence
+0x00000000000064a0    422      0      6   0             0  is_stmt
+0x00000000000064a0    426      9      6   0             0  is_stmt prologue_end
+0x00000000000064a6    427      6      6   0             0  is_stmt
+0x00000000000064a7    427      6      6   0             0  is_stmt end_sequence
+0x00000000000064b0     36      0      6   0             0  is_stmt
+0x00000000000064b1     39      9      6   0             0  is_stmt prologue_end
+0x00000000000064b6     40      6      6   0             0  is_stmt
+0x00000000000064b8     40      6      6   0             0  is_stmt end_sequence
+0x00000000000064c0    175      0      7   0             0  is_stmt
+0x00000000000064c3    177      6      7   0             0  is_stmt prologue_end
+0x00000000000064c4    177      6      7   0             0  is_stmt end_sequence
+0x00000000000064d0    367      0      8   0             0  is_stmt
+0x00000000000064d0    374     18      8   0             0  is_stmt prologue_end
+0x00000000000064e5    375      6      8   0             0  is_stmt
+0x00000000000064e6    375      6      8   0             0  is_stmt end_sequence
+0x00000000000064f0     99      0      9   0             0  is_stmt
+0x0000000000006504    100     30      9   0             0  is_stmt prologue_end
+0x0000000000006509    100     14      9   0             0 
+0x000000000000650e    100     21      9   0             0 
+0x0000000000006518    105     27      9   0             0  is_stmt
+0x0000000000006526      0     27      9   0             0 
+0x0000000000006530    105      9      9   0             0 
+0x000000000000653f    107      6      9   0             0  is_stmt
+0x000000000000654f    105      9      9   0             0  is_stmt
+0x0000000000006558    105      9      9   0             0 
+0x000000000000659b    105      9      9   0             0 
+0x00000000000065b5    105      9      9   0             0  end_sequence
+0x00000000000065c0   6435      0     10   0             0  is_stmt
+0x00000000000065c1   6442     16     10   0             0  is_stmt prologue_end
+0x00000000000065c6   6443      2     10   0             0  is_stmt
+0x00000000000065c8   6443      2     10   0             0  is_stmt end_sequence
+0x00000000000065d0    847      0      1   0             0  is_stmt
+0x00000000000065d1    850     19      1   0             0  is_stmt prologue_end
+0x00000000000065d9    852     21      1   0             0  is_stmt
+0x00000000000065e1    855      6      1   0             0  is_stmt
+0x00000000000065e6    855      6      1   0             0  is_stmt end_sequence
+0x00000000000065f0    811      0      1   0             0  is_stmt
+0x00000000000065f1    814     19      1   0             0  is_stmt prologue_end
+0x00000000000065f9    816     21      1   0             0  is_stmt
+0x0000000000006601    819      6      1   0             0  is_stmt
+0x0000000000006606    819      6      1   0             0  is_stmt end_sequence
+0x0000000000006610   2661      0      1   0             0  is_stmt
+0x000000000000661a   2662     39      1   0             0  is_stmt prologue_end
+0x000000000000661e      0     39      1   0             0 
+0x0000000000006623   2662     59      1   0             0 
+0x0000000000006628   2662      9      1   0             0 
+0x0000000000006633   2663      6      1   0             0  is_stmt
+0x0000000000006639   2663      6      1   0             0  is_stmt end_sequence
+0x0000000000006640    110      0     11   0             0  is_stmt
+0x0000000000006641    111     18     11   0             0  is_stmt prologue_end
+0x0000000000006646    112      6     11   0             0  is_stmt
+0x0000000000006648    112      6     11   0             0  is_stmt end_sequence
+0x0000000000006650    213      0     11   0             0  is_stmt
+0x0000000000006654    214     30     11   0             0  is_stmt prologue_end
+0x0000000000006659    215      6     11   0             0  is_stmt
+0x000000000000665e    215      6     11   0             0  is_stmt end_sequence
+0x0000000000006660   2442      0      1   0             0  is_stmt
+0x0000000000006661   2447     62      1   0             0  is_stmt prologue_end
+0x0000000000006666   2450      6      1   0             0  is_stmt
+0x0000000000006668   2450      6      1   0             0  is_stmt end_sequence
+0x0000000000006670   1949      0      1   0             0  is_stmt
+0x0000000000006674   1950     40      1   0             0  is_stmt prologue_end
+0x0000000000006679   1950     55      1   0             0 
+0x000000000000667d   1950     18      1   0             0 
+0x0000000000006685   1951      6      1   0             0  is_stmt
+0x0000000000006687   1951      6      1   0             0  is_stmt end_sequence
+0x0000000000006690    142      0     12   0             0  is_stmt
+0x0000000000006691    142     16     12   0             0  is_stmt prologue_end
+0x0000000000006694    142     16     12   0             0 
+0x0000000000006697    142     16     12   0             0 
+0x000000000000669c      0     16     12   0             0 
+0x000000000000669e    142     16     12   0             0 
+0x00000000000066a8    153     56     12   0             0  is_stmt
+0x00000000000066b0    153     56     12   0             0 
+0x00000000000066b5    142     25     12   0             0  is_stmt
+0x00000000000066b7      0     25     12   0             0 
+0x00000000000066b9    142     25     12   0             0 
+0x00000000000066bb    142     25     12   0             0  end_sequence
+0x00000000000066c0   2768      0      1   0             0  is_stmt
+0x00000000000066c5   2778     21      1   0             0  is_stmt prologue_end
+0x00000000000066ca   2781     32      1   0             0  is_stmt
+0x00000000000066cf   2781     13      1   0             0 
+0x00000000000066da      0     13      1   0             0 
+0x00000000000066df   2784      5      1   0             0  is_stmt
+0x00000000000066e4   2784      6      1   0             0 
+0x00000000000066ea      0      6      1   0             0 
+0x00000000000066f2   2784      5      1   0             0 
+0x0000000000006701   2784      5      1   0             0  end_sequence
+0x0000000000006710    138      0      9   0             0  is_stmt
+0x0000000000006711    139      9      9   0             0  is_stmt prologue_end
+0x0000000000006719    140      6      9   0             0  is_stmt
+0x000000000000671b    140      6      9   0             0  is_stmt end_sequence
+0x0000000000006720   2707      0      1   0             0  is_stmt
+0x0000000000006724   2711     43      1   0             0  is_stmt prologue_end
+0x0000000000006728      0      0      1   0             0 
+0x000000000000672c   2711     22      1   0             0 
+0x0000000000006734   2713      9      1   0             0  is_stmt
+0x0000000000006743   2714      6      1   0             0  is_stmt
+0x0000000000006748   2714      6      1   0             0  is_stmt end_sequence
 
-debug_line[0x000018d4]
+debug_line[0x00000bb3]
 Line table prologue:
-    total_length: 0x00000109
+    total_length: 0x0000016b
          version: 4
- prologue_length: 0x000000a6
+ prologue_length: 0x000000e5
  min_inst_length: 1
 max_ops_per_inst: 1
  default_is_stmt: 1
@@ -1219,10 +527,11 @@ standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
 standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
 standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
 standard_opcode_lengths[DW_LNS_set_isa] = 1
-include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
-include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/mem"
+include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/fmt"
+include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
+include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src"
 file_names[  1]:
-           name: "const_ptr.rs"
+           name: "mod.rs"
       dir_index: 1
        mod_time: 0x00000000
          length: 0x00000000
@@ -1231,22 +540,351 @@ file_names[  2]:
       dir_index: 2
        mod_time: 0x00000000
          length: 0x00000000
+file_names[  3]:
+           name: "option.rs"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
 
 Address            Line   Column File   ISA Discriminator Flags
 ------------------ ------ ------ ------ --- ------------- -------------
-0x0000000000007d00    367      0      1   0             0  is_stmt
-0x0000000000007d0e    310      5      2   0             0  is_stmt prologue_end
-0x0000000000007d1c    371     28      1   0             0  is_stmt
-0x0000000000007d30      0     28      1   0             0 
-0x0000000000007d39    372     17      1   0             0  is_stmt
-0x0000000000007d45      0     17      1   0             0 
-0x0000000000007d4a    372     37      1   0             0 
-0x0000000000007d50    372     17      1   0             0 
-0x0000000000007d57    372      9      1   0             0 
-0x0000000000007d61      0      9      1   0             0 
-0x0000000000007d6b    374     18      1   0             0  is_stmt
-0x0000000000007d89    372      9      1   0             0  is_stmt
-0x0000000000007da7      0      9      1   0             0 
-0x0000000000007dac    375      6      1   0             0  is_stmt
-0x0000000000007db1    375      6      1   0             0  is_stmt end_sequence
+0x0000000000006750   1986      0      1   0             0  is_stmt
+0x0000000000006751   1986     71      1   0             0  is_stmt prologue_end
+0x0000000000006754   1986     62      1   0             0 
+0x0000000000006759   1986     84      1   0             0 
+0x000000000000675b   1986     84      1   0             0  end_sequence
+0x0000000000006760    184      0      2   0             0  is_stmt
+0x0000000000006760    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006761    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006770    142      0      3   0             0  is_stmt
+0x0000000000006777    142     48      3   0             0  is_stmt prologue_end
+0x000000000000677c      0     48      3   0             0 
+0x000000000000677f    153     56      3   0             0  is_stmt
+0x0000000000006783    142     48      3   0             0  is_stmt
+0x000000000000679d    153     56      3   0             0  is_stmt
+0x00000000000067a2    142     48      3   0             0  is_stmt
+0x00000000000067bc    142     48      3   0             0 
+0x00000000000067d6    142     48      3   0             0 
+0x00000000000067d9      0      0      3   0             0 
+0x00000000000067df    142     53      3   0             0 
+0x00000000000067e7    142     53      3   0             0  end_sequence
+
+debug_line[0x00000d22]
+Line table prologue:
+    total_length: 0x000003c6
+         version: 4
+ prologue_length: 0x00000150
+ min_inst_length: 1
+max_ops_per_inst: 1
+ default_is_stmt: 1
+       line_base: -5
+      line_range: 14
+     opcode_base: 13
+standard_opcode_lengths[DW_LNS_copy] = 0
+standard_opcode_lengths[DW_LNS_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_advance_line] = 1
+standard_opcode_lengths[DW_LNS_set_file] = 1
+standard_opcode_lengths[DW_LNS_set_column] = 1
+standard_opcode_lengths[DW_LNS_negate_stmt] = 0
+standard_opcode_lengths[DW_LNS_set_basic_block] = 0
+standard_opcode_lengths[DW_LNS_const_add_pc] = 0
+standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
+standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
+standard_opcode_lengths[DW_LNS_set_isa] = 1
+include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/num"
+include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
+include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/alloc"
+include_directories[  4] = "/builddir/build/BUILD/rustc-1.47.0-src/library/alloc/src"
+file_names[  1]:
+           name: "mod.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  2]:
+           name: "unique.rs"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  3]:
+           name: "non_null.rs"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  4]:
+           name: "layout.rs"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  5]:
+           name: "alloc.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  6]:
+           name: "raw_vec.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+
+Address            Line   Column File   ISA Discriminator Flags
+------------------ ------ ------ ------ --- ------------- -------------
+0x00000000000067f0     83      0      1   0             0  is_stmt
+0x00000000000067f3     86     18      1   0             0  is_stmt prologue_end
+0x00000000000067f4     86     18      1   0             0  is_stmt end_sequence
+0x0000000000006800    105      0      1   0             0  is_stmt
+0x0000000000006803    107     18      1   0             0  is_stmt prologue_end
+0x0000000000006804    107     18      1   0             0  is_stmt end_sequence
+0x0000000000006810     89      0      2   0             0  is_stmt
+0x0000000000006813     92      6      2   0             0  is_stmt prologue_end
+0x0000000000006814     92      6      2   0             0  is_stmt end_sequence
+0x0000000000006820    137      0      2   0             0  is_stmt
+0x0000000000006821    141     40      2   0             0  is_stmt prologue_end
+0x0000000000006826    141     18      2   0             0 
+0x000000000000682e    142      6      2   0             0  is_stmt
+0x0000000000006830    142      6      2   0             0  is_stmt end_sequence
+0x0000000000006830    137      0      2   0             0  is_stmt
+0x0000000000006831    141     40      2   0             0  is_stmt prologue_end
+0x0000000000006836    141     18      2   0             0 
+0x000000000000683e    142      6      2   0             0  is_stmt
+0x0000000000006840    142      6      2   0             0  is_stmt end_sequence
+0x0000000000006840    107      0      2   0             0  is_stmt
+0x0000000000006843    109      6      2   0             0  is_stmt prologue_end
+0x0000000000006844    109      6      2   0             0  is_stmt end_sequence
+0x0000000000006850    107      0      2   0             0  is_stmt
+0x0000000000006853    109      6      2   0             0  is_stmt prologue_end
+0x0000000000006854    109      6      2   0             0  is_stmt end_sequence
+0x0000000000006860    175      0      3   0             0  is_stmt
+0x0000000000006863    177      6      3   0             0  is_stmt prologue_end
+0x0000000000006864    177      6      3   0             0  is_stmt end_sequence
+0x0000000000006870     92      0      4   0             0  is_stmt
+0x0000000000006874     94     48      4   0             0  is_stmt prologue_end
+0x000000000000687f     95      6      4   0             0  is_stmt
+0x0000000000006884     95      6      4   0             0  is_stmt end_sequence
+0x0000000000006890    101      0      4   0             0  is_stmt
+0x0000000000006890    102      9      4   0             0  is_stmt prologue_end
+0x0000000000006893    103      6      4   0             0  is_stmt
+0x0000000000006894    103      6      4   0             0  is_stmt end_sequence
+0x00000000000068a0    109      0      4   0             0  is_stmt
+0x00000000000068a1    110      9      4   0             0  is_stmt prologue_end
+0x00000000000068aa    111      6      4   0             0  is_stmt
+0x00000000000068ac    111      6      4   0             0  is_stmt end_sequence
+0x00000000000068b0     91      0      5   0             0  is_stmt
+0x00000000000068c8     92     34      5   0             0  is_stmt prologue_end
+0x00000000000068d3     92     49      5   0             0 
+0x00000000000068db     92     14      5   0             0 
+0x00000000000068ea     93      2      5   0             0  is_stmt
+0x00000000000068f4     93      2      5   0             0  is_stmt end_sequence
+0x0000000000006900    242      0      6   0             0  is_stmt
+0x000000000000690b    243     40      6   0             0  is_stmt prologue_end
+0x0000000000006912    243      9      6   0             0 
+0x0000000000006914      0      9      6   0             0 
+0x0000000000006917    251     30      6   0             0  is_stmt
+0x0000000000006927    252     23      6   0             0  is_stmt
+0x0000000000006937    252     17      6   0             0 
+0x0000000000006944    244     13      6   0             0  is_stmt
+0x000000000000694b    255      6      6   0             0  is_stmt
+0x000000000000695a    255      6      6   0             0  is_stmt end_sequence
+0x0000000000006960    242      0      6   0             0  is_stmt
+0x000000000000696b    243     40      6   0             0  is_stmt prologue_end
+0x0000000000006972    243      9      6   0             0 
+0x0000000000006974      0      9      6   0             0 
+0x0000000000006977    250     28      6   0             0  is_stmt
+0x000000000000697f    251     30      6   0             0  is_stmt
+0x000000000000698f    252     23      6   0             0  is_stmt
+0x000000000000699f    252     17      6   0             0 
+0x00000000000069ac    244     13      6   0             0  is_stmt
+0x00000000000069b3    255      6      6   0             0  is_stmt
+0x00000000000069c2    255      6      6   0             0  is_stmt end_sequence
+0x00000000000069d0    220      0      6   0             0  is_stmt
+0x00000000000069d1    221      9      6   0             0  is_stmt prologue_end
+0x00000000000069d9    222      6      6   0             0  is_stmt
+0x00000000000069db    222      6      6   0             0  is_stmt end_sequence
+0x00000000000069e0    212      0      5   0             0  is_stmt
+0x00000000000069fe    213     12      5   0             0  is_stmt prologue_end
+0x0000000000006a06    213      9      5   0             0 
+0x0000000000006a08    216     30      5   0             0  is_stmt
+0x0000000000006a10    216     22      5   0             0 
+0x0000000000006a1e    218      6      5   0             0  is_stmt
+0x0000000000006a28    218      6      5   0             0  is_stmt end_sequence
+0x0000000000006a30    508      0      6   0             0  is_stmt
+0x0000000000006a3a    509     38      6   0             0  is_stmt prologue_end
+0x0000000000006a3f    509     16      6   0             0 
+0x0000000000006a46    509     22      6   0             0 
+0x0000000000006a4a    509     27      6   0             0 
+0x0000000000006a54    510     22      6   0             0  is_stmt
+0x0000000000006a59    512      6      6   0             0  is_stmt
+0x0000000000006a5e    512      6      6   0             0  is_stmt end_sequence
+0x0000000000006a60    508      0      6   0             0  is_stmt
+0x0000000000006a6a    509     38      6   0             0  is_stmt prologue_end
+0x0000000000006a6f    509     16      6   0             0 
+0x0000000000006a76    509     22      6   0             0 
+0x0000000000006a7a    509     27      6   0             0 
+0x0000000000006a84    510     22      6   0             0  is_stmt
+0x0000000000006a89    512      6      6   0             0  is_stmt
+0x0000000000006a8e    512      6      6   0             0  is_stmt end_sequence
+
+debug_line[0x000010ec]
+Line table prologue:
+    total_length: 0x00000309
+         version: 4
+ prologue_length: 0x0000013a
+ min_inst_length: 1
+max_ops_per_inst: 1
+ default_is_stmt: 1
+       line_base: -5
+      line_range: 14
+     opcode_base: 13
+standard_opcode_lengths[DW_LNS_copy] = 0
+standard_opcode_lengths[DW_LNS_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_advance_line] = 1
+standard_opcode_lengths[DW_LNS_set_file] = 1
+standard_opcode_lengths[DW_LNS_set_column] = 1
+standard_opcode_lengths[DW_LNS_negate_stmt] = 0
+standard_opcode_lengths[DW_LNS_set_basic_block] = 0
+standard_opcode_lengths[DW_LNS_const_add_pc] = 0
+standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
+standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
+standard_opcode_lengths[DW_LNS_set_isa] = 1
+include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/fmt"
+include_directories[  2] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/ptr"
+include_directories[  3] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/str"
+include_directories[  4] = "/builddir/build/BUILD/rustc-1.47.0-src/library/alloc/src"
+file_names[  1]:
+           name: "mod.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  2]:
+           name: "mod.rs"
+      dir_index: 2
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  3]:
+           name: "mod.rs"
+      dir_index: 3
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  4]:
+           name: "string.rs"
+      dir_index: 4
+       mod_time: 0x00000000
+         length: 0x00000000
+file_names[  5]:
+           name: "example.rs"
+      dir_index: 0
+       mod_time: 0x00000000
+         length: 0x00000000
+
+Address            Line   Column File   ISA Discriminator Flags
+------------------ ------ ------ ------ --- ------------- -------------
+0x0000000000006a90    319      0      1   0             0  is_stmt
+0x0000000000006a93    320      9      1   0             0  is_stmt prologue_end
+0x0000000000006ab9    321      6      1   0             0  is_stmt
+0x0000000000006aba    321      6      1   0             0  is_stmt end_sequence
+0x0000000000006ac0    184      0      2   0             0  is_stmt
+0x0000000000006ac1    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006ac8    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006ad0    184      0      2   0             0  is_stmt
+0x0000000000006ad7    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006aec      0      1      2   0             0 
+0x0000000000006aef    184      1      2   0             0 
+0x0000000000006b01    184      1      2   0             0  end_sequence
+0x0000000000006b10    184      0      2   0             0  is_stmt
+0x0000000000006b11    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006b18    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006b20    184      0      2   0             0  is_stmt
+0x0000000000006b21    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006b28    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006b30    184      0      2   0             0  is_stmt
+0x0000000000006b31    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006b38    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006b40    184      0      2   0             0  is_stmt
+0x0000000000006b41    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006b48    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006b50    184      0      2   0             0  is_stmt
+0x0000000000006b51    184      1      2   0             0  is_stmt prologue_end
+0x0000000000006b58    184      1      2   0             0  is_stmt end_sequence
+0x0000000000006b60    421      0      3   0             0  is_stmt
+0x0000000000006b66    425      2      3   0             0  is_stmt prologue_end
+0x0000000000006b67    425      2      3   0             0  is_stmt end_sequence
+0x0000000000006b70   4349      0      3   0             0  is_stmt
+0x0000000000006b71   4350      9      3   0             0  is_stmt prologue_end
+0x0000000000006b77   4351      6      3   0             0  is_stmt
+0x0000000000006b79   4351      6      3   0             0  is_stmt end_sequence
+0x0000000000006b80   2136      0      4   0             0  is_stmt
+0x0000000000006b81   2137     43      4   0             0  is_stmt prologue_end
+0x0000000000006b86   2137     18      4   0             0 
+0x0000000000006b91   2138      6      4   0             0  is_stmt
+0x0000000000006b93   2138      6      4   0             0  is_stmt end_sequence
+0x0000000000006ba0      3      0      5   0             0  is_stmt
+0x0000000000006ba5      4      8      5   0             0  is_stmt prologue_end
+0x0000000000006ba8      4      5      5   0             0 
+0x0000000000006baa      7     13      5   0             0  is_stmt
+0x0000000000006bad      7      9      5   0             0 
+0x0000000000006bb4      7     27      5   0             0 
+0x0000000000006bb7      7     22      5   0             0 
+0x0000000000006bc0      7      9      5   0             0 
+0x0000000000006bc2      9      2      5   0             0  is_stmt
+0x0000000000006bcb      9      2      5   0             0  is_stmt end_sequence
+0x0000000000006bd0     11      0      5   0             0  is_stmt
+0x0000000000006be9     12     21      5   0             0  is_stmt prologue_end
+0x0000000000006c40     18      5      5   0             0  is_stmt
+0x0000000000006c48     12     21      5   0             0  is_stmt
+0x0000000000006c51     12      9      5   0             0 
+0x0000000000006c60     12      9      5   0             0 
+0x0000000000006c80     12     21      5   0             0 
+0x0000000000006c8a     13     33      5   0             0  is_stmt
+0x0000000000006c9d     14     13      5   0             0  is_stmt
+0x0000000000006ca1     13     33      5   0             0  is_stmt
+0x0000000000006ca5     17     24      5   0             0  is_stmt
+0x0000000000006cb0     17      9      5   0             0 
+0x0000000000006ccb     17      9      5   0             0 
+0x0000000000006cdc     18      5      5   0             0  is_stmt
+0x0000000000006ce9      0      5      5   0             0 
+0x0000000000006cee     18      5      5   0             0 
+0x0000000000006cf3     19      2      5   0             0  is_stmt
+0x0000000000006d05      0      2      5   0             0 
+0x0000000000006d12     18      5      5   0             0  is_stmt
+0x0000000000006d17      0      5      5   0             0 
+0x0000000000006d1c     18      5      5   0             0 
+0x0000000000006d2b     18      5      5   0             0  end_sequence
+
+debug_line[0x000013f9]
+Line table prologue:
+    total_length: 0x00000087
+         version: 4
+ prologue_length: 0x00000066
+ min_inst_length: 1
+max_ops_per_inst: 1
+ default_is_stmt: 1
+       line_base: -5
+      line_range: 14
+     opcode_base: 13
+standard_opcode_lengths[DW_LNS_copy] = 0
+standard_opcode_lengths[DW_LNS_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_advance_line] = 1
+standard_opcode_lengths[DW_LNS_set_file] = 1
+standard_opcode_lengths[DW_LNS_set_column] = 1
+standard_opcode_lengths[DW_LNS_negate_stmt] = 0
+standard_opcode_lengths[DW_LNS_set_basic_block] = 0
+standard_opcode_lengths[DW_LNS_const_add_pc] = 0
+standard_opcode_lengths[DW_LNS_fixed_advance_pc] = 1
+standard_opcode_lengths[DW_LNS_set_prologue_end] = 0
+standard_opcode_lengths[DW_LNS_set_epilogue_begin] = 0
+standard_opcode_lengths[DW_LNS_set_isa] = 1
+include_directories[  1] = "/builddir/build/BUILD/rustc-1.47.0-src/library/core/src/iter/traits"
+file_names[  1]:
+           name: "collect.rs"
+      dir_index: 1
+       mod_time: 0x00000000
+         length: 0x00000000
+
+Address            Line   Column File   ISA Discriminator Flags
+------------------ ------ ------ ------ --- ------------- -------------
+0x0000000000006d50    248      0      1   0             0  is_stmt
+0x0000000000006d53    249      9      1   0             0  is_stmt prologue_end
+0x0000000000006d61    250      6      1   0             0  is_stmt
+0x0000000000006d62    250      6      1   0             0  is_stmt end_sequence
 

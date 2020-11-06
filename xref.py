@@ -6,7 +6,7 @@ from subprocess import call
 file_name = sys.argv[1]
 executable_name = sys.argv[2]
 
-call(["rustc", "-g","-o",executable_name, file_name])
+call(["rustc", "-g","-C", "opt-level=1","-o",executable_name, file_name])
 
 f = open('objdump.txt', 'w')
 call(["objdump", "-d", executable_name], stdout=f)
@@ -48,8 +48,10 @@ with open('output.txt', 'r') as llvm:
         line_number += 1
         if file_name in line:
             break
+        
     for i in range(line_number, line_number + 6):
         llvm.readline()
+
     for line in llvm:
         if line.strip() == '':
             break
@@ -57,12 +59,13 @@ with open('output.txt', 'r') as llvm:
         # if matched, we take out the actual address part
         if m:
             memory_addr = m.group(2)
-            if not start:
-                start_address = memory_addr
-                start = True
+            
             # split the line by whitespaces
             tup = tuple(part for part in re.split(r"\s+", line) if part)
             # if the line in the table is 0, match it to the line in the prevous row (prev_line)
+            if not start and int(tup[1]) > 0 and int(tup[1]) < count:
+                start_address = memory_addr
+                start = True
             if tup[1] == '0':
                 address_line[memory_addr] = prev_line
             # if not, then the value of this current memory address in the dict is the line value in the table
@@ -70,13 +73,14 @@ with open('output.txt', 'r') as llvm:
                 address_line[memory_addr] = int(tup[1])
                 prev_line = int(tup[1])
                 # put the address value in line_dict if this is the first time the line is executed in the assembly code
-                if int(tup[1]) not in line_dict.keys():
+                if int(tup[1]) not in line_dict.keys() and int(tup[1]) < count :
                     line_dict[int(tup[1])] = memory_addr
 
 end_address = list(address_line.keys())[-1]
 start_int = int("0x"+start_address, 16)
 end_int = int("0x"+end_address, 16)
 llvm.close()
+
 # for x, y in address_line.items():
 #     print(x, y)
 
@@ -86,6 +90,9 @@ from the objdump.txt file, extract:
 - assembly_dict =  {<address>: (<address>, <bytes>, <instruction>)}
 - ref_dict = {<address>: <address>}
 - code_block = list of tuples {<index>, (<line number>, [list of corresponding assembly addresses], not-grayed)}
+index is the counter starting from 1
+line number: the line number from rust source file
+
 """""
 addr_to_line_dict = {}
 assembly_dict = {}
@@ -142,7 +149,8 @@ for line in fr.readlines():
                 code_block[index][1].append(address)
     
 fr.close()
-
+# for x, y in code_block.items():
+#     print(x, y)
 
 ### WRITE TO HTML ###
 html = open("cross-indexer.html", "w+")
