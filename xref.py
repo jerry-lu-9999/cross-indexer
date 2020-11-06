@@ -85,8 +85,8 @@ start_int = int("0x"+start_address, 16)
 end_int = int("0x"+end_address, 16)
 llvm.close()
 
-# for x, y in address_line.items():
-#     print(x, y)
+for x, y in line_dict.items():
+    print(x, y)
 
 ### READ FROM OBJDUMP FILE ###
 """""
@@ -110,6 +110,7 @@ obj_pattern = re.compile(r"[\s]{4}[a-z0-9]{4}.*")
 # only starts reading when cur address >= start_address and stops when cur address > end_address
 start_code = False
 for line in fr.readlines():
+
     m = obj_pattern.match(line)
     if m:
         address = m.group()[4:8]
@@ -146,15 +147,13 @@ for line in fr.readlines():
                     # if this is the code block when the line is executed in the fist time  
                     # ({line: address} value appears in line_dict), set the 3rd tuple of the block to be True  
                     code_block[index] = (int(address_line[address]), [address], False)
-                    if line_dict[code_block[index][0]] == address: 
+                    if code_block[index][0] in line_dict.keys() and line_dict[code_block[index][0]] == address: 
                         code_block[index] = (int(address_line[address]), [address], True)    
             # if address doesn't has a corresponding line in the table, put it in the current block
             else:
                 code_block[index][1].append(address)
     
 fr.close()
-# for x, y in code_block.items():
-#     print(x, y)
 
 ### WRITE TO HTML ###
 html = open("cross-indexer.html", "w+")
@@ -249,7 +248,12 @@ for key in code_block.keys():
     html.write("<p")
     if not not_grayed:
         html.write(""" class="grayed" """)
-    html.write(">" + str(key) + "." + rust_code[line_num] + "</p>\n")
+    
+    if line_num < count:
+        html.write(">" + str(key) + "." + rust_code[line_num] + "</p>\n")
+    else:
+        html.write("></p>\n")
+        
     html.write("""</div>""")
 
     html.write("</div>\n")
